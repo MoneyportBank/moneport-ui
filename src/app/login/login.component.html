@@ -1,0 +1,51 @@
+<div class="fixed-background"></div>
+<main>
+  <div class="container">
+    <div class="row h-100">
+      <div class="col-12 col-md-10 mx-auto my-auto">
+        <div class="card auth-card">
+          <div class="position-relative image-side ">
+            <p class=" text-white h2">iPORTAL ACCESS</p>
+            <p class="white mb-0">
+              Important Security Information: You must only proceed beyond this point if you are authorised to access this service.
+              <br><br>
+              Please note that your use of the service is constantly monitored and any unauthorised attempts to access may be subject to legal action.
+              <br><br>
+              Copyright © 2018 - 2021
+              <br>
+              Jefferson & Bennett Group Ltd
+              <br>
+              All rights reserved
+            </p>
+          </div>
+          <div class="form-side">
+            <a class="c-pointer">
+              <span class="logo-single"></span>
+            </a>
+
+            <form [formGroup]="form" (ngSubmit)="login()" style="width: 260px">
+              <label class="form-group has-float-label">
+                <input class="form-control" required type="text" formControlName="tenant" />
+                <span>{{'Tenant' | translate}}</span>
+              </label>
+              <label class="form-group has-float-label">
+                <input class="form-control" required type="text" formControlName="username" />
+                <span>{{'Username' | translate}}</span>
+              </label>
+              <label class="form-group has-float-label">
+                <input class="form-control" required type="password" formControlName="password" autocomplete="new-password" />
+                <span>{{'Password' | translate}}</span>
+              </label>
+              <mat-card-actions>
+                <div layout="row" style="width: 132px; float: right;" >
+                  <button class="btn btn-primary btn-lg btn-shadow" flex type="submit" [disabled]="form.invalid">{{'Sign In' | translate}}</button>
+                </div>
+              </mat-card-actions>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

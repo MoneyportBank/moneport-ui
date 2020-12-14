@@ -1,0 +1,110 @@
+{
+  "/identity": {
+    "target": "http://demo-api.moneyport.io",
+    "secure": false,
+    "pathRewrite": {
+      "/identity": "/identity"
+    },
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/office": {
+    "target": "http://demo-api.moneyport.io",
+    "secure": false,
+    "pathRewrite": {
+      "^/api/office": "/api/office"
+    },
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/customer": {
+    "target": "http://demo-api.moneyport.io",
+    "secure": false,
+    "pathRewrite": {
+      "^/api/customer": "/api/customer"
+    },
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/accounting": {
+    "target": "http://demo-api.moneyport.io",
+    "secure": false,
+    "pathRewrite": {
+      "^/api/accounting": "/api/accounting"
+    },
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/portfolio": {
+    "target": "http://demo-api.moneyport.io",
+    "secure": false,
+    "pathRewrite": {
+      "^/api/portfolio": "/api/portfolio"
+    },
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/deposit": {
+    "target": "http://demo-api.moneyport.io",
+    "secure": false,
+    "pathRewrite": {
+      "^/api/deposit": "/api/deposit"
+    },
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/teller": {
+    "target": "http://demo-api.moneyport.io",
+    "secure": false,
+    "pathRewrite": {
+      "^/api/teller": "/api/teller"
+    },
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/reporting": {
+    "target": "http://demo-api.moneyport.io",
+    "secure": false,
+    "pathRewrite": {
+      "^/api/reporting": "/api/reporting"
+    },
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/cheques": {
+    "target": "http://demo-api.moneyport.io",
+    "secure": false,
+    "pathRewrite": {
+      "^/api/cheques": "/api/cheques"
+    },
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/payroll": {
+    "target": "http://demo-api.moneyport.io",
+    "secure": false,
+    "pathRewrite": {
+      "^/api/payroll": "/api/payroll"
+    },
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/group": {
+    "target": "http://demo-api.moneyport.io",
+    "secure": false,
+    "pathRewrite": {
+      "^/api/group": "/api/group"
+    },
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/notification": {
+    "target": "http://demo-api.moneyport.io",
+    "secure": false,
+    "pathRewrite": {
+      "^/api/notification": "/api/notification"
+    },
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
