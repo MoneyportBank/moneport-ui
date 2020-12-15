@@ -21,120 +21,95 @@
             <div class="separator mb-5"></div>
         </div>
     </div>
-    <div class="dashboard-chart">
-        <nvd3 [options]="lineChart" [data]="dataLineChart"></nvd3>
-    </div>
-    <div class="dashboard-chart">
-        <nvd3 [options]="discreteBarChart" [data]="dataDiscreteBarChart"></nvd3>
-    </div>
-    <div class="dashboard-chart">
-        <nvd3 [options]="pieChart" [data]="dataPieChart"></nvd3>
-    </div>
-    <div class="dashboard-chart">
-        <nvd3 [options]="scatterChart" [data]="dataScatterChart"></nvd3>
-    </div>
-    <div class="dashboard-chart">
-        <nvd3 [options]="multiBarChart" [data]="dataMultiBarChart"></nvd3>
-    </div>
-    <div class="dashboard-chart">
-        <nvd3 [options]="boxPlotChart" [data]="dataBoxPlotChart"></nvd3>
-    </div>
-    <div class="dashboard-chart">
-        <nvd3 [options]="donutChart" [data]="dataDonutChart"></nvd3>
-    </div>
-    <!--<div layout="column" layout-gt-sm="row" class="inset">-->
-    <!--<div flex-gt-sm="50" *hasPermission="{ id: 'office_offices', accessLevel: 'READ'}">-->
-    <!--<mat-card>-->
-    <!--<mat-card-title translate>Offices</mat-card-title>-->
-    <!--<mat-card-subtitle translate>Create and edit your offices here.</mat-card-subtitle>-->
-    <!--<mat-card-actions>-->
-    <!--<a mat-button color="accent" class="text-upper" [routerLink]="['/offices']">-->
-    <!--<span translate>View headquarter office</span>-->
-    <!--</a>-->
-    <!--</mat-card-actions>-->
-    <!--</mat-card>-->
-    <!--</div>-->
-    <!--<div flex-gt-sm="50" *hasPermission="{ id: 'office_employees', accessLevel: 'READ'}">-->
-    <!--<mat-card>-->
-    <!--<mat-card-title translate>Employees</mat-card-title>-->
-    <!--<mat-card-subtitle translate>Create and edit your employees and assign them to offices.</mat-card-subtitle>-->
-    <!--<mat-card-actions>-->
-    <!--<a mat-button color="accent" class="text-upper" [routerLink]="['/employees']">-->
-    <!--<span translate>View employees</span>-->
-    <!--</a>-->
-    <!--<a mat-button color="accent" class="text-upper" [routerLink]="['/employees/create']" *hasPermission="{ id: 'office_employees', accessLevel: 'CHANGE'}">-->
-    <!--<span translate>Create new employee</span>-->
-    <!--</a>-->
-    <!--</mat-card-actions>-->
-    <!--</mat-card>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div layout="column" layout-gt-sm="row" class="inset">-->
-    <!--<div flex-gt-sm="40" *hasPermission="{ id: 'customer_customers', accessLevel: 'READ'}">-->
-    <!--<mat-card>-->
-    <!--<mat-card-title translate>Member</mat-card-title>-->
-    <!--<mat-card-subtitle translate>Create/edit members for your offices.</mat-card-subtitle>-->
-    <!--<mat-card-actions>-->
-    <!--<a mat-button color="accent" class="text-upper" [routerLink]="['/customers']">-->
-    <!--<span translate>View member </span>-->
-    <!--</a>-->
-    <!--<a mat-button color="accent" class="text-upper" [routerLink]="['/customers/create']" *hasPermission="{ id: 'customer_customers', accessLevel: 'CHANGE'}">-->
-    <!--<span translate>Create new member </span>-->
-    <!--</a>-->
-    <!--</mat-card-actions>-->
-    <!--</mat-card>-->
-    <!--</div>-->
-    <!--</div>-->
-
-    <!--<div layout="column" layout-gt-sm="row" class="inset">-->
-    <!--<div flex-gt-sm="40" *hasPermission="{ id: 'accounting_ledgers', accessLevel: 'READ'}">-->
-    <!--<mat-card>-->
-    <!--<mat-card-title translate>Accounting</mat-card-title>-->
-    <!--<mat-card-subtitle translate>Create/edit ledgers and accounts for your General Ledger.</mat-card-subtitle>-->
-    <!--<mat-card-actions>-->
-    <!--<a mat-button color="accent" class="text-upper" [routerLink]="['/accounting']">-->
-    <!--<span translate>View General Ledger</span>-->
-    <!--</a>-->
-    <!--<a mat-button color="accent" class="text-upper" [routerLink]="['/accounting/create']" *hasPermission="{ id: 'accounting_ledgers', accessLevel: 'CHANGE'}">-->
-    <!--<span translate>Create new ledger</span>-->
-    <!--</a>-->
-    <!--</mat-card-actions>-->
-    <!--</mat-card>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--
-      <div layout="column" layout-gt-sm="row" class="inset">
-          <div flex-gt-sm="40">
-            <mat-card>
-              <mat-card-title translate>Group</mat-card-title>
-              <mat-card-subtitle translate>Create/edit groups.</mat-card-subtitle>
-              <mat-card-actions>
-                <a mat-button color="accent" class="text-upper" [routerLink]="['/groups']">
-                  <span translate>View Group </span>
-                </a>
-                <a mat-button color="accent" class="text-upper" [routerLink]="['/groups/create']" *hasPermission="{ id: 'group_groups', accessLevel: 'CHANGE'}">
-                  <span translate>Create new group </span>
-                </a>
-              </mat-card-actions>
-            </mat-card>
-          </div>
+    <div style="display: flex; flex-direction: row;">
+        <div class="dashboard-chart">
+            <h5 style="margin-left: 30px">CustomerAttrition</h5>
+            <nvd3 [options]="lineChartCustomer" [data]="dataLineChartCustomerAttrition"></nvd3>
         </div>
+        <div class="dashboard-chart" style="margin-left: 30px">
+            <h5 style="margin-left: 30px">CustomerAcquisition</h5>
+            <nvd3 [options]="lineChartCustomer" [data]="dataLineChartCustomerAcquisition"></nvd3>
+        </div>
+    </div>
 
-      -->
-    <!--<div layout="column" layout-gt-sm="row" class="inset">-->
-    <!--<div flex-gt-sm="40" *hasPermission="{ id: 'identity_roles', accessLevel: 'READ'}">-->
-    <!--<mat-card>-->
-    <!--<mat-card-title translate>Roles</mat-card-title>-->
-    <!--<mat-card-subtitle translate>Create and edit roles to manage access levels within fims.</mat-card-subtitle>-->
-    <!--<mat-card-actions>-->
-    <!--<a mat-button color="accent" class="text-upper" [routerLink]="['/roles']">-->
-    <!--<span translate>View roles</span>-->
-    <!--</a>-->
-    <!--<a mat-button color="accent" class="text-upper" [routerLink]="['/roles/create']" *hasPermission="{ id: 'identity_roles', accessLevel: 'CHANGE'}">-->
-    <!--<span translate>Create new role</span>-->
-    <!--</a>-->
-    <!--</mat-card-actions>-->
-    <!--</mat-card>-->
-    <!--</div>-->
-    <!--</div>-->
+    <div style="display: flex; flex-direction: row;">
+        <div class="dashboard-chart" style="width: 30%">
+            <h5>Monthly Plans (Corporate)</h5>
+            <nvd3 [options]="donutChart" [data]="dataDonutChartMonthlyPlansCorporate"></nvd3>
+        </div>
+        <div class="dashboard-chart card-body" style="margin-left: 30px; width: 30%">
+            <h5 class="card-title">Logs</h5>
+            <div style="height: 200px">
+                <perfect-scrollbar class="container">
+                    <table class="table table-sm table-borderless">
+                        <tbody>
+                        <tr>
+                            <td><span class="align-middle border-theme-1 log-indicator"></span></td>
+                            <td><span class="font-weight-medium">New user registiration</span></td>
+                            <td class="text-right"><span class="text-muted">14:12</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="align-middle border-theme-2 log-indicator"></span></td>
+                            <td><span class="font-weight-medium">New sale: Soufflé</span></td>
+                            <td class="text-right"><span class="text-muted">13:20</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="align-middle border-danger log-indicator"></span></td>
+                            <td><span class="font-weight-medium">14 products added</span></td>
+                            <td class="text-right"><span class="text-muted">12:55</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="align-middle border-theme-2 log-indicator"></span></td>
+                            <td><span class="font-weight-medium">New sale: Napoleonshat</span></td>
+                            <td class="text-right"><span class="text-muted">12:44</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="align-middle border-theme-2 log-indicator"></span></td>
+                            <td><span class="font-weight-medium">New sale: Cremeschnitte</span></td>
+                            <td class="text-right"><span class="text-muted">12:30</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="align-middle border-theme-2 log-indicator"></span></td>
+                            <td><span class="font-weight-medium">New sale: Soufflé</span></td>
+                            <td class="text-right"><span class="text-muted">10:40</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="align-middle border-danger log-indicator"></span></td>
+                            <td><span class="font-weight-medium">2 categories added</span></td>
+                            <td class="text-right"><span class="text-muted">10:20</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="align-middle border-theme-2 log-indicator"></span></td>
+                            <td><span class="font-weight-medium">New sale: Chocolate Cake</span></td>
+                            <td class="text-right"><span class="text-muted">09:28</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="align-middle border-theme-2 log-indicator"></span></td>
+                            <td><span class="font-weight-medium">New sale: Magdalena</span></td>
+                            <td class="text-right"><span class="text-muted">09:25</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="align-middle border-theme-2 log-indicator"></span></td>
+                            <td><span class="font-weight-medium">New sale: Fat Rascal</span></td>
+                            <td class="text-right"><span class="text-muted">09:20</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="align-middle border-theme-2 log-indicator"></span></td>
+                            <td><span class="font-weight-medium">New sale: Parkin</span></td>
+                            <td class="text-right"><span class="text-muted">09:10</span></td>
+                        </tr><!----></tbody>
+                    </table>
+                </perfect-scrollbar>
+            </div>
+        </div>
+        <div class="dashboard-chart" style="margin-left: 30px; width: 30%">
+            <h5>Monthly Plans (Individual)</h5>
+            <nvd3 [options]="donutChart" [data]="dataDonutChartMonthlyPlansIndividual"></nvd3>
+        </div>
+    </div>
+
+    <div class="dashboard-chart">
+        <h5 style="margin-left: 30px">TransactionsVolume</h5>
+        <nvd3 [options]="lineChartCustomer" [data]="dataLineChartTransactionsVolume"></nvd3>
+    </div>
 </div>

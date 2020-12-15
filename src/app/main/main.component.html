@@ -75,7 +75,6 @@
             <div class="user d-inline-block" dropdown>
                 <button class="btn btn-empty p-0" type="button" dropdownToggle mat-icon-button
                         [mat-menu-trigger-for]="menu">
-                    <span class="name">{{displayName}}</span>
                     <span>
                       <i class="simple-icon-user"></i>
                     </span>
@@ -102,7 +101,7 @@
         <mat-sidenav
                 [mode]="'side'"
                 [opened]="isOpened$ | async">
-            <perfect-scrollbar class="container" [config]="config">
+            <perfect-scrollbar class="container">
                 <mat-nav-list>
                     <ng-container class="scroll" *ngFor="let menuItem of menuItems; let i = index">
                         <a mat-list-item [routerLink]="[menuItem.routerLink]" routerLinkActive="active"

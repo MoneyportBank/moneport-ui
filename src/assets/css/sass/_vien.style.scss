@@ -161,6 +161,10 @@ perfect-scrollbar > .ps {
   padding-left: 0 !important;
 }
 
+.ps__rail-y {
+  left: unset !important;
+}
+
 .cdk-overlay-pane {
   top: 70px !important;
   right: 40px !important;
