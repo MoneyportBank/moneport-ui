@@ -18,105 +18,9 @@
  */
 import {Component} from '@angular/core';
 import {OnInit, ViewEncapsulation} from '@angular/core';
+import {ChartDataSets, ChartOptions} from 'chart.js';
 
 declare let d3: any;
-
-// ...
-
-// utils
-function sinAndCos() {
-    var sin = [], sin2 = [],
-        cos = [];
-
-    //Data is represented as an array of {x,y} pairs.
-    for (var i = 0; i < 100; i++) {
-        sin.push({x: i, y: Math.sin(i / 10)});
-        sin2.push({x: i, y: i % 10 == 5 ? null : Math.sin(i / 10) * 0.25 + 0.5});
-        cos.push({x: i, y: .5 * Math.cos(i / 10 + 2) + Math.random() / 10});
-    }
-
-    let CAC = [
-        {x: '', y: 55},
-    ]
-
-    //Line chart data should be sent as an array of series objects.
-    return [
-        {
-            values: sin,      //values - represents the array of {x,y} data points
-            key: 'Sine Wave', //key  - the name of the series.
-            color: '#ff7f0e'  //color - optional: choose your own line color.
-        },
-        {
-            values: cos,
-            key: 'Cosine Wave',
-            color: '#2ca02c'
-        },
-        {
-            values: sin2,
-            key: 'Another sine wave',
-            color: '#7777ff',
-            area: true      //area - set to true if you want this line to turn into a filled area chart.
-        }
-    ];
-}
-
-function generateDataScatter(groups, points) {
-    var data = [],
-        shapes = ['circle', 'cross', 'triangle-up', 'triangle-down', 'diamond', 'square'],
-        random = d3.random.normal();
-
-    for (var i = 0; i < groups; i++) {
-        data.push({
-            key: 'Group ' + i,
-            values: []
-        });
-
-        for (var j = 0; j < points; j++) {
-            data[i].values.push({
-                x: random()
-                , y: random()
-                , size: Math.random()
-                , shape: shapes[j % 6]
-            });
-        }
-    }
-    return data;
-}
-
-function generateDataMultiBar() {
-    return stream_layers(3, 50 + Math.random() * 50, .1).map(function (data, i) {
-        return {
-            key: 'Stream' + i,
-            values: data
-        };
-    });
-}
-
-/* Inspired by Lee Byron's test data generator. */
-function stream_layers(n, m, o) {
-    if (arguments.length < 3) o = 0;
-
-    function bump(a) {
-        var x = 1 / (.1 + Math.random()),
-            y = 2 * Math.random() - .5,
-            z = 10 / (.1 + Math.random());
-        for (var i = 0; i < m; i++) {
-            var w = (i / m - y) * z;
-            a[i] += x * Math.exp(-w * w);
-        }
-    }
-
-    return d3.range(n).map(function () {
-        var a = [], i;
-        for (i = 0; i < m; i++) a[i] = o + o * Math.random();
-        for (i = 0; i < 5; i++) bump(a);
-        return a.map(stream_index);
-    });
-}
-
-function stream_index(d, i) {
-    return {x: i, y: Math.max(0, d)};
-}
 
 @Component({
     templateUrl: './quick-access.component.html',
@@ -127,14 +31,153 @@ function stream_index(d, i) {
 
 export class QuickAccessComponent implements OnInit {
     lineChartCustomer;
+    lineChartTransactions;
     donutChart;
     dataLineChartCustomerAttrition;
     dataLineChartCustomerAcquisition;
-    dataLineChartTransactionsVolume;
+    dataLineChartTransactionsVolumeCorporate;
+    dataLineChartTransactionsVolumeIndividuals;
     dataDonutChartMonthlyPlansCorporate;
     dataDonutChartMonthlyPlansIndividual;
+
+    // Pie
+    public pieChartLabels: string[] = ['Standard', 'Plus', 'Premium'];
+    public pieChartCorporateData: number[] = [20, 50, 30];
+    public pieChartIndividualData: number[] = [10, 44, 46];
+    public pieChartType  = 'pie';
+
+
+    // lineChart
+    public lineChartData: Array<any> = [
+        {data: [65, 59, 80, 81, 56, 55, 40, 67, 45, 67, 34, 78], label: 'Corporate'},
+        {data: [28, 48, 40, 19, 86, 27, 90, 81, 56, 55, 40, 90], label: 'Individual'}
+    ];
+    public lineChartTransactionVolumeCorporateData: Array<any> = [
+        {data: [65, 59, 80, 81, 56, 55, 40, 67, 45, 67, 34, 78,
+                81, 56, 55, 40, 67, 45, 67, 34, 78, 56, 34, 67
+            ], label: 'Corporate'}
+    ];
+    public lineChartTransactionVolumeIndividualsData: Array<any> = [
+        {data: [28, 48, 40, 19, 86, 27, 90, 81, 56, 55, 40, 90,
+                55, 40, 67, 45, 67, 34, 81, 56, 55, 40, 67, 89
+            ], label: 'Individuals'}
+    ];
+    public lineChartLabels: Array<any> = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    public lineChartTransactionLabels: Array<any> = [
+        '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12',
+        '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23'];
+    public lineChartOptions: any = {
+        responsive: true
+    };
+    public lineChartColors: Array<any> = [
+        {
+            backgroundColor: 'rgba(3,142,203,0.2)',
+            borderColor: '#038ecb',
+            pointBackgroundColor: '#035b87',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+        },
+        {
+            backgroundColor: 'rgba(255,193,7,0.2)',
+            borderColor: '#ffc107',
+            pointBackgroundColor: '#906a07',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgba(77,83,96,1)'
+        }
+    ];
+    public lineChartColorsCorporate: Array<any> = [
+        {
+            backgroundColor: 'rgba(3,142,203,0.2)',
+            borderColor: '#038ecb',
+            pointBackgroundColor: '#035b87',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+        }
+    ];
+    public lineChartColorsIndividuals: Array<any> = [
+        {
+            backgroundColor: 'rgba(255,193,7,0.2)',
+            borderColor: '#ffc107',
+            pointBackgroundColor: '#906a07',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgba(77,83,96,1)'
+        }
+    ];
+    public lineChartLegend = true;
+    public lineChartType = 'line';
+
+    // public randomize(): void {
+    //     let _lineChartData: Array<any> = new Array(this.lineChartData.length);
+    //     for (let i = 0; i < this.lineChartData.length; i++) {
+    //         _lineChartData[i] = {data: new Array(this.lineChartData[i].data.length), label: this.lineChartData[i].label};
+    //         for (let j = 0; j < this.lineChartData[i].data.length; j++) {
+    //             _lineChartData[i].data[j] = Math.floor((Math.random() * 100) + 1);
+    //         }
+    //     }
+    //     this.lineChartData = _lineChartData;
+    // }
+
+    // events
+    // public chartClicked(e: any): void {
+    //     console.log(e);
+    // }
+    //
+    // public chartHovered(e: any): void {
+    //     console.log(e);
+    // }
+
     ngOnInit() {
         this.lineChartCustomer = {
+            chart: {
+                type: 'lineChart',
+                height: 300,
+                margin: {
+                    top: 20,
+                    right: 55,
+                    bottom: 40,
+                    left: 55
+                },
+                duration: 500,
+                x: function (d) {
+                    return d.x;
+                },
+                y: function (d) {
+                    return d.y;
+                },
+                useInteractiveGuideline: true,
+                dispatch: {
+                    stateChange: function (e) {
+                        console.log('stateChange');
+                    },
+                    changeState: function (e) {
+                        console.log('changeState');
+                    },
+                    tooltipShow: function (e) {
+                        console.log('tooltipShow');
+                    },
+                    tooltipHide: function (e) {
+                        console.log('tooltipHide');
+                    }
+                },
+                xAxis: {
+                    tickFormat: function (d) {
+                        return d3.time.format('%b')(new Date(d))
+                    }
+                },
+                yAxis: {
+                    axisLabel: '',
+                    axisLabelDistance: 10
+                },
+                callback: function (chart) {
+                    console.log('!!! lineChart callback !!!');
+                }
+            }
+        }
+        this.lineChartTransactions = {
             chart: {
                 type: 'lineChart',
                 height: 300,
@@ -166,11 +209,10 @@ export class QuickAccessComponent implements OnInit {
                     }
                 },
                 xAxis: {
-                    axisLabel: 'Week days',
                     tickFormat: function (d) {
-                        return d3.time.format('%a')(new Date(d))
+                        return d3.time.format('%H')(new Date(d)) + 'h'
                     },
-                    axisLabelDistance: 100000
+                    axisLabelDistance: 1000
                 },
                 yAxis: {
                     axisLabel: '',
@@ -211,13 +253,13 @@ export class QuickAccessComponent implements OnInit {
         this.dataLineChartCustomerAttrition = [
             {
                 values: [
-                    {x: 1607472000000, y: 55},
-                    {x: 1607558400000, y: 62},
-                    {x: 1607644800000, y: 58},
-                    {x: 1607731200000, y: 69},
-                    {x: 1607817600000, y: 61},
-                    {x: 1607904000000, y: 72},
-                    {x: 1608044222000, y: 84}
+                    {x: 1577836800000, y: 55},
+                    {x: 1580515200000, y: 62},
+                    {x: 1583020800000, y: 58},
+                    {x: 1585699200000, y: 69},
+                    {x: 1588291200000, y: 61},
+                    {x: 1590969600000, y: 72},
+                    {x: 1593561600000, y: 84}
                 ],
                 key: 'Corporate',
                 color: '#038ecb',
@@ -226,12 +268,12 @@ export class QuickAccessComponent implements OnInit {
             {
                 values: [
                     {x: 1607472000000, y: 75},
-                    {x: 1607558400000, y: 58},
-                    {x: 1607644800000, y: 67},
-                    {x: 1607731200000, y: 87},
-                    {x: 1607817600000, y: 91},
-                    {x: 1607904000000, y: 88},
-                    {x: 1608044222000, y: 54}
+                    {x: 1605571200000, y: 58},
+                    {x: 1602892800000, y: 67},
+                    {x: 1600300800000, y: 87},
+                    {x: 1597622400000, y: 91},
+                    {x: 1594622400000, y: 88},
+                    {x: 1591622400000, y: 54}
                 ],
                 key: 'Individual',
                 color: '#ffc107',
@@ -242,12 +284,12 @@ export class QuickAccessComponent implements OnInit {
             {
                 values: [
                     {x: 1607472000000, y: 34},
-                    {x: 1607558400000, y: 56},
-                    {x: 1607644800000, y: 67},
-                    {x: 1607731200000, y: 78},
-                    {x: 1607817600000, y: 89},
-                    {x: 1607904000000, y: 81},
-                    {x: 1608044222000, y: 67}
+                    {x: 1605571200000, y: 56},
+                    {x: 1602892800000, y: 67},
+                    {x: 1600300800000, y: 78},
+                    {x: 1597622400000, y: 89},
+                    {x: 1594622400000, y: 81},
+                    {x: 1591622400000, y: 67}
                 ],
                 key: 'Corporate',
                 color: '#038ecb',
@@ -256,19 +298,19 @@ export class QuickAccessComponent implements OnInit {
             {
                 values: [
                     {x: 1607472000000, y: 34},
-                    {x: 1607558400000, y: 76},
-                    {x: 1607644800000, y: 65},
-                    {x: 1607731200000, y: 54},
-                    {x: 1607817600000, y: 57},
-                    {x: 1607904000000, y: 56},
-                    {x: 1608044222000, y: 86}
+                    {x: 1605571200000, y: 76},
+                    {x: 1602892800000, y: 65},
+                    {x: 1600300800000, y: 54},
+                    {x: 1597622400000, y: 57},
+                    {x: 1594622400000, y: 56},
+                    {x: 1591622400000, y: 86}
                 ],
                 key: 'Individual',
                 color: '#ffc107',
                 area: true
             }
         ];
-        this.dataLineChartTransactionsVolume = [
+        this.dataLineChartTransactionsVolumeCorporate = [
             {
                 values: [
                     {x: 1607472000000, y: 34},
@@ -282,7 +324,9 @@ export class QuickAccessComponent implements OnInit {
                 key: 'Corporate',
                 color: '#038ecb',
                 area: true
-            },
+            }
+        ];
+        this.dataLineChartTransactionsVolumeIndividuals = [
             {
                 values: [
                     {x: 1607472000000, y: 34},
@@ -300,7 +344,7 @@ export class QuickAccessComponent implements OnInit {
         ];
         this.dataDonutChartMonthlyPlansCorporate = [
             {
-                key: 'Standart',
+                key: 'Standard',
                 y: 10,
             },
             {
@@ -315,7 +359,7 @@ export class QuickAccessComponent implements OnInit {
         ];
         this.dataDonutChartMonthlyPlansIndividual = [
             {
-                key: 'Standart',
+                key: 'Standard',
                 y: 20,
             },
             {

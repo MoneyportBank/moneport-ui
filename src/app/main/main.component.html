@@ -17,31 +17,6 @@
 
 <div layout="column" layout-fill>
     <mat-progress-bar *ngIf="isLoading$ | async" mode="indeterminate"></mat-progress-bar>
-    <!--<mat-toolbar color="primary" class="mat-whiteframe-z1">-->
-    <!--<button mat-icon-button (click)="toggleSideNav()">-->
-    <!--<mat-icon>menu</mat-icon>-->
-    <!--</button>-->
-    <!--<span flex></span>-->
-    <!--<mat-menu #menu="matMenu" x-position="before">-->
-    <!--<button mat-menu-item [disabled]="true">-->
-    <!--<mat-icon>account_circle</mat-icon>-->
-    <!--<span>{{username$ | async}}</span>-->
-    <!--</button>-->
-    <!--<hr>-->
-    <!--<button mat-menu-item (click)="goToSettings()">-->
-    <!--<mat-icon>settings</mat-icon>-->
-    <!--<span>{{'Settings' | translate}}</span>-->
-    <!--</button>-->
-    <!--<button mat-menu-item (click)="logout()">-->
-    <!--<mat-icon>exit_to_app</mat-icon>-->
-    <!--<span>{{'Sign Out' | translate}}</span>-->
-    <!--</button>-->
-    <!--</mat-menu>-->
-    <!--<span flex></span>-->
-    <!--<button mat-icon-button [mat-menu-trigger-for]="menu">-->
-    <!--<mat-icon>account_circle</mat-icon>-->
-    <!--</button>-->
-    <!--</mat-toolbar>-->
     <nav class="navbar fixed-top">
         <div class="d-flex align-items-center navbar-left">
             <a (click)="toggleSideNav()"
@@ -66,21 +41,15 @@
         </a>
 
         <div class="navbar-right">
-
-            <!--<span flex></span>-->
-            <!--<button mat-icon-button [mat-menu-trigger-for]="menu">-->
-            <!--<mat-icon>account_circle</mat-icon>-->
-            <!--</button>-->
-
             <div class="user d-inline-block" dropdown>
                 <button class="btn btn-empty p-0" type="button" dropdownToggle mat-icon-button
-                        [mat-menu-trigger-for]="menu">
+                        [mat-menu-trigger-for]="userMenu">
                     <span>
                       <i class="simple-icon-user"></i>
                     </span>
                 </button>
 
-                <mat-menu #menu="matMenu" x-position="before">
+                <mat-menu #userMenu="matMenu" class="user-menu" yPosition="below" xPosition="before">
                     <button mat-menu-item [disabled]="true">
                         <span>{{username$ | async}}</span>
                     </button>
@@ -103,15 +72,110 @@
                 [opened]="isOpened$ | async">
             <perfect-scrollbar class="container">
                 <mat-nav-list>
-                    <ng-container class="scroll" *ngFor="let menuItem of menuItems; let i = index">
-                        <a mat-list-item [routerLink]="[menuItem.routerLink]" routerLinkActive="active"
-                           *hasPermission="menuItem.permission">
-                            <i [ngClass]="menuItem.icon"></i>
-                            {{menuItem.title | translate}}
-                            <!--<h3 matLine>{{menuItem.title | translate}}</h3>-->
-                            <!--<p matLine>{{menuItem.description | translate}}</p>-->
+                    <ng-container class="scroll">
+                        <a mat-list-item [routerLink]="'/quickAccess'" routerLinkActive="active"
+                           *hasPermission="">
+                            <i [ngClass]="'iconsminds-monitor-3'"></i>
+                            {{'Dashboard' | translate}}
                         </a>
-                        <mat-divider *ngIf="i === 0"></mat-divider>
+                        <a mat-list-item [routerLink]="'/suite'" routerLinkActive="active"
+                           *hasPermission="{ id: 'teller_operations', accessLevel: 'READ' }">
+                            <i [ngClass]="'iconsminds-magnifi-glass'"></i>
+                            {{'AML Suite' | translate}}
+                        </a>
+                        <a mat-list-item [mat-menu-trigger-for]="transactionsMonitoringMenu" routerLinkActive="active"
+                           *hasPermission="{ id: 'teller_operations', accessLevel: 'READ' }">
+                            <i [ngClass]="'iconsminds-target-market'"></i>
+                            {{'Transactions Monitoring' | translate}}
+                        </a>
+                        <mat-menu #transactionsMonitoringMenu="matMenu" class="transactions-monitoring-menu" yPosition="below" xPosition="after">
+                            <div class="caption">Dashboard</div>
+                            <a mat-list-item [routerLink]="'/transactions-monitoring-main'" routerLinkActive="active"
+                               *hasPermission="{ id: 'teller_operations', accessLevel: 'READ' }">
+                                <i [ngClass]="'iconsminds-target-market'"></i>
+                                {{'Main' | translate}}
+                            </a>
+                            <hr>
+                            <div class="caption">Monitoring Desk</div>
+                            <a mat-list-item [routerLink]="'/transactions-monitoring-alerts'" routerLinkActive="active"
+                               *hasPermission="{ id: 'teller_operations', accessLevel: 'READ' }">
+                                <i [ngClass]="'simple-icon-flag'"></i>
+                                {{'Alerts' | translate}}
+                            </a>
+                            <a mat-list-item [routerLink]="'/transactions-monitoring-entities'" routerLinkActive="active"
+                               *hasPermission="{ id: 'teller_operations', accessLevel: 'READ' }">
+                                <i [ngClass]="'simple-icon-list'"></i>
+                                {{'Entities' | translate}}
+                            </a>
+                            <a mat-list-item [routerLink]="'/transactions-monitoring-transactions'" routerLinkActive="active"
+                               *hasPermission="{ id: 'teller_operations', accessLevel: 'READ' }">
+                                <i [ngClass]="'simple-icon-shuffle'"></i>
+                                {{'Transactions' | translate}}
+                            </a>
+                            <a mat-list-item [routerLink]="'/transactions-monitoring-cases'" routerLinkActive="active"
+                               *hasPermission="{ id: 'teller_operations', accessLevel: 'READ' }">
+                                <i [ngClass]="'simple-icon-puzzle'"></i>
+                                {{'Cases' | translate}}
+                            </a>
+                            <hr>
+                            <div class="caption">Configuration</div>
+                            <a mat-list-item [routerLink]="'/transactions-monitoring-segments'" routerLinkActive="active"
+                               *hasPermission="{ id: 'teller_operations', accessLevel: 'READ' }">
+                                <i [ngClass]="'simple-icon-organization'"></i>
+                                {{'Segments' | translate}}
+                            </a>
+                            <a mat-list-item [routerLink]="'/transactions-monitoring-users'" routerLinkActive="active"
+                               *hasPermission="{ id: 'teller_operations', accessLevel: 'READ' }">
+                                <i [ngClass]="'simple-icon-people'"></i>
+                                {{'Users' | translate}}
+                            </a>
+                        </mat-menu>
+                        <a mat-list-item [routerLink]="'/offices'" routerLinkActive="active"
+                           *hasPermission="{ id: 'office_offices', accessLevel: 'READ' }">
+                            <i [ngClass]="'iconsminds-museum'"></i>
+                            {{'Branches' | translate}}
+                        </a>
+                        <a mat-list-item [routerLink]="'/roles'" routerLinkActive="active"
+                           *hasPermission="{ id: 'identity_roles', accessLevel: 'READ' }">
+                            <i [ngClass]="'iconsminds-key'"></i>
+                            {{'Administration' | translate}}
+                        </a>
+                        <a mat-list-item [routerLink]="'/employees'" routerLinkActive="active"
+                           *hasPermission="{ id: 'office_employees', accessLevel: 'READ' }">
+                            <i [ngClass]="'iconsminds-user'"></i>
+                            {{'Staff' | translate}}
+                        </a>
+                        <a mat-list-item [routerLink]="'/accounting'" routerLinkActive="active"
+                           *hasPermission="{ id: 'accounting_ledgers', accessLevel: 'READ' }">
+                            <i [ngClass]="'iconsminds-coins'"></i>
+                            {{'Accounting' | translate}}
+                        </a>
+
+                        <a mat-list-item [routerLink]="'/customers'" routerLinkActive="active"
+                           *hasPermission="{ id: 'customer_customers', accessLevel: 'READ' }">
+                            <i [ngClass]="'simple-icon-grid'"></i>
+                            {{'Customers' | translate}}
+                        </a>
+                        <a mat-list-item [routerLink]="'/loans'" routerLinkActive="active"
+                           *hasPermission="{ id: 'portfolio_products', accessLevel: 'READ' }">
+                            <i [ngClass]="'iconsminds-financial'"></i>
+                            {{'Loan products' | translate}}
+                        </a>
+                        <a mat-list-item [routerLink]="'/deposits'" routerLinkActive="active"
+                           *hasPermission="{ id: 'deposit_definitions', accessLevel: 'READ' }">
+                            <i [ngClass]="'iconsminds-pound-sign-2'"></i>
+                            {{'Account Management' | translate}}
+                        </a>
+                        <a mat-list-item [routerLink]="'/teller'" routerLinkActive="active"
+                           *hasPermission="{ id: 'teller_operations', accessLevel: 'READ' }">
+                            <i [ngClass]="'iconsminds-hipster-men'"></i>
+                            {{'Teller' | translate}}
+                        </a>
+                        <a mat-list-item [routerLink]="'/reports'" routerLinkActive="active"
+                           *hasPermission="{ id: 'teller_operations', accessLevel: 'READ' }">
+                            <i [ngClass]="'iconsminds-statistic'"></i>
+                            {{'Reports' | translate}}
+                        </a>
                     </ng-container>
                 </mat-nav-list>
             </perfect-scrollbar>

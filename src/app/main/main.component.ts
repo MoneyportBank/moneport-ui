@@ -36,6 +36,7 @@ interface MenuItem {
   title: string;
   description?: string;
   routerLink: string;
+  items?: MenuItem[];
 }
 
 @Component({
@@ -48,93 +49,6 @@ export class MainComponent implements OnInit, OnDestroy, AfterViewInit {
   private routerEventSubscription: Subscription;
 
   @ViewChild(MatSidenav) sidenav: MatSidenav;
-
-  menuItems: MenuItem[] = [
-    {
-        title: 'Dashboards',
-        icon: 'iconsminds-monitor-3',
-        routerLink: '/quickAccess'
-    },
-    {
-        title: 'AML Suite',
-        icon: 'iconsminds-magnifi-glass',
-        routerLink: '/reports',
-        permission: { id: 'teller_operations', accessLevel: 'READ' }
-    },
-    {
-      title: 'Branches',
-      description: 'Manage offices',
-      icon: 'iconsminds-museum',
-      routerLink: '/offices',
-      permission: { id: 'office_offices', accessLevel: 'READ' }
-    },
-    {
-      title: 'Administration',
-      description: 'Manage roles and permissions',
-      icon: ' iconsminds-key',
-      routerLink: '/roles',
-      permission: { id: 'identity_roles', accessLevel: 'READ' }
-    },
-    {
-      title: 'Staff',
-      description: 'Manage employees',
-      icon: 'iconsminds-user',
-      routerLink: '/employees',
-      permission: { id: 'office_employees', accessLevel: 'READ' }
-    },
-    {
-      title: 'Accounting',
-      description: 'Manage ledger accounts',
-      icon: 'iconsminds-coins',
-      routerLink: '/accounting',
-      permission: { id: 'accounting_ledgers', accessLevel: 'READ' }
-    },
-
-
-    // {
-    //   title: 'Groups',
-    //   description: 'Manage groups',
-    //   icon: 'group',
-    //   routerLink: '/groups',
-    //   permission: { id: 'group_groups', accessLevel: 'READ' }
-    // },
-
-    {
-      title: 'Customers',
-      description: 'Manage members',
-      icon: 'simple-icon-grid',
-      routerLink: '/customers',
-      permission: { id: 'customer_customers', accessLevel: 'READ' }
-    },
-    {
-      title: 'Loan products',
-      description: 'Manage loan products',
-      icon: 'iconsminds-financial',
-      routerLink: '/loans',
-      permission: { id: 'portfolio_products', accessLevel: 'READ' }
-    },
-    {
-      title: 'Account Management',
-      description: 'Account management',
-      icon: 'iconsminds-pound-sign-2',
-      routerLink: '/deposits',
-      permission: { id: 'deposit_definitions', accessLevel: 'READ' }
-    },
-    {
-      title: 'Teller',
-      description: 'Teller management',
-      icon: 'iconsminds-hipster-men',
-      routerLink: '/teller',
-      permission: { id: 'teller_operations', accessLevel: 'READ' }
-    },
-    {
-      title: 'Reports',
-      description: 'View reports',
-      icon: 'iconsminds-statistic',
-      routerLink: '/reports',
-      permission: { id: 'teller_operations', accessLevel: 'READ' }
-    }
-  ];
 
   isLoading$: Observable<boolean>;
 
@@ -192,6 +106,10 @@ export class MainComponent implements OnInit, OnDestroy, AfterViewInit {
 
   toggleSideNav(): void {
     this.sidenav.toggle(!this.sidenav.opened);
+  }
+
+  toggleSideNavSub(): void {
+      this.sidenav.toggle(!this.sidenav.opened);
   }
 
   logout(): void {

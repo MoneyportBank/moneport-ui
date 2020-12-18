@@ -17,25 +17,68 @@
 <div class="mat-content" flex mat-scroll-y>
     <div class="row">
         <div class="col-12">
-            <h1>Dashboards</h1>
+            <br>
+            <h1>Dashboard</h1>
             <div class="separator mb-5"></div>
         </div>
     </div>
+    <!--<div class="row">-->
+        <!--<div class="col-md-6">-->
+            <!--<div style="display: block;">-->
+                <!--<canvas baseChart width="400" height="400"-->
+                        <!--[datasets]="lineChartData"-->
+                        <!--[labels]="lineChartLabels"-->
+                        <!--[options]="lineChartOptions"-->
+                        <!--[colors]="lineChartColors"-->
+                        <!--[legend]="lineChartLegend"-->
+                        <!--[chartType]="lineChartType"-->
+                        <!--(chartHover)="chartHovered($event)"-->
+                        <!--(chartClick)="chartClicked($event)"></canvas>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
     <div style="display: flex; flex-direction: row;">
-        <div class="dashboard-chart">
-            <h5 style="margin-left: 30px">CustomerAttrition</h5>
-            <nvd3 [options]="lineChartCustomer" [data]="dataLineChartCustomerAttrition"></nvd3>
+        <div class="dashboard-chart half" >
+            <h5 style="margin-left: 30px">Customer Attrition</h5>
+            <div style="display: block;">
+                <canvas baseChart height="150"
+                        [datasets]="lineChartData"
+                        [labels]="lineChartLabels"
+                        [options]="lineChartOptions"
+                        [colors]="lineChartColors"
+                        [legend]="lineChartLegend"
+                        [chartType]="lineChartType">
+
+                </canvas>
+            </div>
+            <!--<nvd3 [options]="lineChartCustomer" [data]="dataLineChartCustomerAttrition"></nvd3>-->
         </div>
-        <div class="dashboard-chart" style="margin-left: 30px">
-            <h5 style="margin-left: 30px">CustomerAcquisition</h5>
-            <nvd3 [options]="lineChartCustomer" [data]="dataLineChartCustomerAcquisition"></nvd3>
+        <div class="dashboard-chart half" style="margin-left: 30px">
+            <h5 style="margin-left: 30px">Customer Acquisition</h5>
+            <div style="display: block;">
+                <canvas baseChart height="150"
+                        [datasets]="lineChartData"
+                        [labels]="lineChartLabels"
+                        [options]="lineChartOptions"
+                        [colors]="lineChartColors"
+                        [legend]="lineChartLegend"
+                        [chartType]="lineChartType">
+                </canvas>
+            </div>
+            <!--<nvd3 [options]="lineChartCustomer" [data]="dataLineChartCustomerAcquisition"></nvd3>-->
         </div>
     </div>
 
     <div style="display: flex; flex-direction: row;">
         <div class="dashboard-chart" style="width: 30%">
             <h5>Monthly Plans (Corporate)</h5>
-            <nvd3 [options]="donutChart" [data]="dataDonutChartMonthlyPlansCorporate"></nvd3>
+            <canvas baseChart
+                    [data]="pieChartCorporateData"
+                    [labels]="pieChartLabels"
+                    [chartType]="pieChartType">
+
+            </canvas>
+            <!--<nvd3 [options]="donutChart" [data]="dataDonutChartMonthlyPlansCorporate"></nvd3>-->
         </div>
         <div class="dashboard-chart card-body" style="margin-left: 30px; width: 30%">
             <h5 class="card-title">Logs</h5>
@@ -46,70 +89,113 @@
                         <tr>
                             <td><span class="align-middle border-theme-1 log-indicator"></span></td>
                             <td><span class="font-weight-medium">New user registiration</span></td>
-                            <td class="text-right"><span class="text-muted">14:12</span></td>
+                            <td class="text-right"><span class="text-muted">15/12/2020 18:20:11</span></td>
                         </tr>
                         <tr>
-                            <td><span class="align-middle border-theme-2 log-indicator"></span></td>
-                            <td><span class="font-weight-medium">New sale: Soufflé</span></td>
-                            <td class="text-right"><span class="text-muted">13:20</span></td>
+                            <td><span class="align-middle border-theme-1 log-indicator"></span></td>
+                            <td><span class="font-weight-medium">New user registiration</span></td>
+                            <td class="text-right"><span class="text-muted">15/12/2020 18:20:11</span></td>
                         </tr>
                         <tr>
-                            <td><span class="align-middle border-danger log-indicator"></span></td>
-                            <td><span class="font-weight-medium">14 products added</span></td>
-                            <td class="text-right"><span class="text-muted">12:55</span></td>
+                            <td><span class="align-middle border-theme-1 log-indicator"></span></td>
+                            <td><span class="font-weight-medium">New user registiration</span></td>
+                            <td class="text-right"><span class="text-muted">15/12/2020 18:20:11</span></td>
                         </tr>
                         <tr>
-                            <td><span class="align-middle border-theme-2 log-indicator"></span></td>
-                            <td><span class="font-weight-medium">New sale: Napoleonshat</span></td>
-                            <td class="text-right"><span class="text-muted">12:44</span></td>
+                            <td><span class="align-middle border-theme-1 log-indicator"></span></td>
+                            <td><span class="font-weight-medium">New user registiration</span></td>
+                            <td class="text-right"><span class="text-muted">15/12/2020 18:20:11</span></td>
                         </tr>
                         <tr>
-                            <td><span class="align-middle border-theme-2 log-indicator"></span></td>
-                            <td><span class="font-weight-medium">New sale: Cremeschnitte</span></td>
-                            <td class="text-right"><span class="text-muted">12:30</span></td>
+                            <td><span class="align-middle border-theme-1 log-indicator"></span></td>
+                            <td><span class="font-weight-medium">New user registiration</span></td>
+                            <td class="text-right"><span class="text-muted">15/12/2020 18:20:11</span></td>
                         </tr>
                         <tr>
-                            <td><span class="align-middle border-theme-2 log-indicator"></span></td>
-                            <td><span class="font-weight-medium">New sale: Soufflé</span></td>
-                            <td class="text-right"><span class="text-muted">10:40</span></td>
+                            <td><span class="align-middle border-theme-1 log-indicator"></span></td>
+                            <td><span class="font-weight-medium">New user registiration</span></td>
+                            <td class="text-right"><span class="text-muted">15/12/2020 18:20:11</span></td>
                         </tr>
                         <tr>
-                            <td><span class="align-middle border-danger log-indicator"></span></td>
-                            <td><span class="font-weight-medium">2 categories added</span></td>
-                            <td class="text-right"><span class="text-muted">10:20</span></td>
+                            <td><span class="align-middle border-theme-1 log-indicator"></span></td>
+                            <td><span class="font-weight-medium">New user registiration</span></td>
+                            <td class="text-right"><span class="text-muted">15/12/2020 18:20:11</span></td>
                         </tr>
                         <tr>
-                            <td><span class="align-middle border-theme-2 log-indicator"></span></td>
-                            <td><span class="font-weight-medium">New sale: Chocolate Cake</span></td>
-                            <td class="text-right"><span class="text-muted">09:28</span></td>
+                            <td><span class="align-middle border-theme-1 log-indicator"></span></td>
+                            <td><span class="font-weight-medium">New user registiration</span></td>
+                            <td class="text-right"><span class="text-muted">15/12/2020 18:20:11</span></td>
                         </tr>
                         <tr>
-                            <td><span class="align-middle border-theme-2 log-indicator"></span></td>
-                            <td><span class="font-weight-medium">New sale: Magdalena</span></td>
-                            <td class="text-right"><span class="text-muted">09:25</span></td>
+                            <td><span class="align-middle border-theme-1 log-indicator"></span></td>
+                            <td><span class="font-weight-medium">New user registiration</span></td>
+                            <td class="text-right"><span class="text-muted">15/12/2020 18:20:11</span></td>
                         </tr>
                         <tr>
-                            <td><span class="align-middle border-theme-2 log-indicator"></span></td>
-                            <td><span class="font-weight-medium">New sale: Fat Rascal</span></td>
-                            <td class="text-right"><span class="text-muted">09:20</span></td>
+                            <td><span class="align-middle border-theme-1 log-indicator"></span></td>
+                            <td><span class="font-weight-medium">New user registiration</span></td>
+                            <td class="text-right"><span class="text-muted">15/12/2020 18:20:11</span></td>
                         </tr>
                         <tr>
-                            <td><span class="align-middle border-theme-2 log-indicator"></span></td>
-                            <td><span class="font-weight-medium">New sale: Parkin</span></td>
-                            <td class="text-right"><span class="text-muted">09:10</span></td>
-                        </tr><!----></tbody>
+                            <td><span class="align-middle border-theme-1 log-indicator"></span></td>
+                            <td><span class="font-weight-medium">New user registiration</span></td>
+                            <td class="text-right"><span class="text-muted">15/12/2020 18:20:11</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="align-middle border-theme-1 log-indicator"></span></td>
+                            <td><span class="font-weight-medium">New user registiration</span></td>
+                            <td class="text-right"><span class="text-muted">15/12/2020 18:20:11</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="align-middle border-theme-1 log-indicator"></span></td>
+                            <td><span class="font-weight-medium">New user registiration</span></td>
+                            <td class="text-right"><span class="text-muted">15/12/2020 18:20:11</span></td>
+                        </tr>
+                        </tbody>
                     </table>
                 </perfect-scrollbar>
             </div>
         </div>
         <div class="dashboard-chart" style="margin-left: 30px; width: 30%">
             <h5>Monthly Plans (Individual)</h5>
-            <nvd3 [options]="donutChart" [data]="dataDonutChartMonthlyPlansIndividual"></nvd3>
+            <canvas baseChart
+                    [data]="pieChartIndividualData"
+                    [labels]="pieChartLabels"
+                    [chartType]="pieChartType">
+
+            </canvas>
+            <!--<nvd3 [options]="donutChart" [data]="dataDonutChartMonthlyPlansIndividual"></nvd3>-->
         </div>
     </div>
 
     <div class="dashboard-chart">
-        <h5 style="margin-left: 30px">TransactionsVolume</h5>
-        <nvd3 [options]="lineChartCustomer" [data]="dataLineChartTransactionsVolume"></nvd3>
+        <h5 style="margin-left: 30px">Transaction Volume (Corporate)</h5>
+        <div style="display: block;">
+            <canvas baseChart height="100"
+                    [datasets]="lineChartTransactionVolumeCorporateData"
+                    [labels]="lineChartTransactionLabels"
+                    [options]="lineChartOptions"
+                    [colors]="lineChartColorsCorporate"
+                    [legend]="lineChartLegend"
+                    [chartType]="lineChartType">
+            </canvas>
+        </div>
+        <!--<nvd3 [options]="lineChartTransactions" [data]="dataLineChartTransactionsVolumeCorporate"></nvd3>-->
     </div>
+
+    <div class="dashboard-chart">
+        <h5 style="margin-left: 30px">Transaction Volume (Individuals)</h5>
+        <canvas baseChart height="100"
+                [datasets]="lineChartTransactionVolumeIndividualsData"
+                [labels]="lineChartTransactionLabels"
+                [options]="lineChartOptions"
+                [colors]="lineChartColorsIndividuals"
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType">
+        </canvas>
+        <!--<nvd3 [options]="lineChartTransactions" [data]="dataLineChartTransactionsVolumeIndividuals"></nvd3>-->
+    </div>
+    <br>
+    <br>
+    <br>
 </div>
