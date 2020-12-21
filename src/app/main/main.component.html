@@ -90,7 +90,7 @@
                         </a>
                         <mat-menu #transactionsMonitoringMenu="matMenu" class="transactions-monitoring-menu" yPosition="below" xPosition="after">
                             <div class="caption">Dashboard</div>
-                            <a mat-list-item [routerLink]="'/transactions-monitoring-main'" routerLinkActive="active"
+                            <a mat-list-item [routerLink]="'/transactionsMonitoringMain'" routerLinkActive="active"
                                *hasPermission="{ id: 'teller_operations', accessLevel: 'READ' }">
                                 <i [ngClass]="'iconsminds-target-market'"></i>
                                 {{'Main' | translate}}

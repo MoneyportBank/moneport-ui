@@ -1,0 +1,101 @@
+<div class="mat-content" flex mat-scroll-y>
+    <div class="row">
+        <div class="col-12">
+            <br>
+            <h1>Transactions Monitoring Dashboard</h1>
+            <div class="separator mb-5"></div>
+        </div>
+    </div>
+    <div class="dashboard-chart">
+        <h5 style="margin-left: 30px">System Transaction Throughput</h5>
+        <div style="display: block;">
+            <canvas baseChart height="100"
+                    [datasets]="lineChartData"
+                    [labels]="lineChartLabels"
+                    [options]="lineChartOptions"
+                    [colors]="lineChartColors"
+                    [legend]="lineChartLegend"
+                    [chartType]="lineChartType">
+            </canvas>
+        </div>
+    </div>
+    <div class="dashboard-chart">
+        <h5 style="margin-left: 30px">Age of Active Alerts</h5>
+        <div style="display: block;">
+            <canvas baseChart height="100"
+                    [datasets]="barChartDataAgeOfActiveAlerts"
+                    [labels]="barChartLabelsAgeOfActiveAlerts"
+                    [options]="barChartOptionsAgeOfActiveAlerts"
+                    [colors]="barChartColors"
+                    [legend]="barChartLegend"
+                    [chartType]="barChartType">
+            </canvas>
+        </div>
+    </div>
+    <div class="dashboard-chart">
+        <h5 style="margin-left: 30px">Processed Alerts</h5>
+        <div style="display: block;">
+            <canvas baseChart height="100"
+                    [datasets]="barChartDataProcessedAlerts"
+                    [labels]="barChartLabelsProcessedAlerts"
+                    [options]="barChartOptionsProcessedAlerts"
+                    [colors]="barChartColors"
+                    [legend]="barChartLegend"
+                    [chartType]="barChartType">
+            </canvas>
+        </div>
+    </div>
+    <div style="display: flex; flex-direction: row;">
+        <div class="dashboard-chart half" >
+            <h5 style="margin-left: 30px">System Status</h5>
+            <div class="row" style="height: 90%">
+                <div class="big-bar col-2" style="border-bottom: 8px solid #79cdd0">
+                    <div class="big-bar-container">
+                        <div class="value">631</div>
+                        <div>In Review</div>
+                    </div>
+                </div>
+                <div class="big-bar col-2" style="border-bottom: 8px solid #f07a1b">
+                    <div class="big-bar-container">
+                        <div class="value">82</div>
+                        <div>Accepted</div>
+                    </div>
+                </div>
+                <div class="big-bar col-2" style="border-bottom: 8px solid #feb91e">
+                    <div class="big-bar-container">
+                        <div class="value">51</div>
+                        <div>Escalated</div>
+                    </div>
+                </div>
+                <div class="big-bar col-2" style="border-bottom: 8px solid #71b535">
+                    <div class="big-bar-container">
+                        <div class="value">30</div>
+                        <div>Rejected</div>
+                    </div>
+                </div>
+                <div class="big-bar col-2" style="border-bottom: 8px solid #b86ea6">
+                    <div class="big-bar-container">
+                        <div class="value">8</div>
+                        <div>Pending Information</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard-chart half" style="margin-left: 30px">
+            <h5 style="margin-left: 30px">Active States per User</h5>
+            <div style="display: block;">
+                <canvas baseChart height="150"
+                        [datasets]="barChartDataActiveStatesPerUser"
+                        [labels]="barChartLabelsActiveStatesPerUser"
+                        [options]="barChartOptionsAgeOfActiveAlerts"
+                        [colors]="barChartColors"
+                        [legend]="barChartLegend"
+                        [chartType]="barChartType">
+                </canvas>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+</div>

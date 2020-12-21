@@ -22,12 +22,19 @@ import {ChangePasswordGuard} from '../services/security/change.password.service'
 import {AccessDeniedComponent} from './access.denied.component';
 import {PermissionGuard} from '../services/security/authz/permission.guard';
 import {QuickAccessComponent} from '../quickAccess/quick-access.component';
+import {TransactionsMonitoringMainComponent} from '../transactionsMonitoring/main/transactions-monitoring-main.component';
+
 
 export const MainRoutes: Routes = [
   {
     path: '', component: MainComponent, canActivateChild: [ChangePasswordGuard, PermissionGuard], children: [
       { path: '', redirectTo: '/quickAccess', pathMatch: 'full'},
       { path: 'quickAccess', component: QuickAccessComponent, data: { title: 'Quick access' } },
+      {
+        path: 'transactionsMonitoringMain',
+        component: TransactionsMonitoringMainComponent,
+        data: { title: 'Transactions Monitoring Main Dashboard' }
+      },
       { path: 'offices', loadChildren: './../offices/office.module#OfficeModule' },
       { path: 'employees', loadChildren: './../employees/employee.module#EmployeeModule' },
       { path: 'roles', loadChildren: './../roles/role.module#RoleModule' },
