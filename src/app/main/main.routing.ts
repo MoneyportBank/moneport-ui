@@ -23,39 +23,45 @@ import {AccessDeniedComponent} from './access.denied.component';
 import {PermissionGuard} from '../services/security/authz/permission.guard';
 import {QuickAccessComponent} from '../quickAccess/quick-access.component';
 import {TransactionsMonitoringMainComponent} from '../transactionsMonitoring/main/transactions-monitoring-main.component';
+import {TransactionsMonitoringSegmentsComponent} from '../transactionsMonitoring/segments/transactions-monitoring-segments.component';
 
 
 export const MainRoutes: Routes = [
-  {
-    path: '', component: MainComponent, canActivateChild: [ChangePasswordGuard, PermissionGuard], children: [
-      { path: '', redirectTo: '/quickAccess', pathMatch: 'full'},
-      { path: 'quickAccess', component: QuickAccessComponent, data: { title: 'Quick access' } },
-      {
-        path: 'transactionsMonitoringMain',
-        component: TransactionsMonitoringMainComponent,
-        data: { title: 'Transactions Monitoring Main Dashboard' }
-      },
-      { path: 'offices', loadChildren: './../offices/office.module#OfficeModule' },
-      { path: 'employees', loadChildren: './../employees/employee.module#EmployeeModule' },
-      { path: 'roles', loadChildren: './../roles/role.module#RoleModule' },
-      { path: 'user', loadChildren: './../user/user.module#UserModule' },
-      { path: 'customers', loadChildren: './../customers/customer.module#CustomerModule' },
-      { path: 'groups', loadChildren: './../groups/group.module#GroupModule' },
-      { path: 'accounting', loadChildren: './../accounting/accounting.module#AccountingModule' },
-      { path: 'loans', loadChildren: './../loans/products/product.module#ProductModule' },
-      { path: 'deposits', loadChildren: './../depositAccount/deposit-account.module#DepositAccountModule' },
-      { path: 'teller', loadChildren: './../teller/teller.module#TellerModule' },
-      { path: 'reports', loadChildren: './../reporting/reporting.module#ReportingModule' },
-      { path: 'denied', component: AccessDeniedComponent, data: { title: 'Not allowed' } }
-    ]
-  },
-  {
-    path: 'changePassword', loadChildren: './../user/user.module#UserModule', data: { title: 'Change password' }
-  }
+    {
+        path: '', component: MainComponent, canActivateChild: [ChangePasswordGuard, PermissionGuard], children: [
+            {path: '', redirectTo: '/quickAccess', pathMatch: 'full'},
+            {path: 'quickAccess', component: QuickAccessComponent, data: {title: 'Quick access'}},
+            {
+                path: 'transactionsMonitoringMain',
+                component: TransactionsMonitoringMainComponent,
+                data: {title: 'Transactions Monitoring Main Dashboard'}
+            },
+            {
+                path: 'transactionsMonitoringSegments',
+                component: TransactionsMonitoringSegmentsComponent,
+                data: {title: 'Transactions Monitoring Segments'}
+            },
+            {path: 'offices', loadChildren: './../offices/office.module#OfficeModule'},
+            {path: 'employees', loadChildren: './../employees/employee.module#EmployeeModule'},
+            {path: 'roles', loadChildren: './../roles/role.module#RoleModule'},
+            {path: 'user', loadChildren: './../user/user.module#UserModule'},
+            {path: 'customers', loadChildren: './../customers/customer.module#CustomerModule'},
+            {path: 'groups', loadChildren: './../groups/group.module#GroupModule'},
+            {path: 'accounting', loadChildren: './../accounting/accounting.module#AccountingModule'},
+            {path: 'loans', loadChildren: './../loans/products/product.module#ProductModule'},
+            {path: 'deposits', loadChildren: './../depositAccount/deposit-account.module#DepositAccountModule'},
+            {path: 'teller', loadChildren: './../teller/teller.module#TellerModule'},
+            {path: 'reports', loadChildren: './../reporting/reporting.module#ReportingModule'},
+            {path: 'denied', component: AccessDeniedComponent, data: {title: 'Not allowed'}}
+        ]
+    },
+    {
+        path: 'changePassword', loadChildren: './../user/user.module#UserModule', data: {title: 'Change password'}
+    }
 
 ];
 
 export const mainRoutingProviders: any[] = [
-  ChangePasswordGuard,
-  PermissionGuard
+    ChangePasswordGuard,
+    PermissionGuard
 ];

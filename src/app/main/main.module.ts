@@ -26,6 +26,7 @@ import {FimsSharedModule} from '../common/common.module';
 import {NotificationComponent} from './notification.component';
 import {QuickAccessModule} from '../quickAccess/quick-access.module'
 import {TransactionsMonitoringMainModule} from '../transactionsMonitoring/main/transactions-monitoring-main.module'
+import {TransactionsMonitoringSegmentsModule} from '../transactionsMonitoring/segments/transactions-monitoring-segments.module'
 import {
   MatButtonModule,
   MatCardModule,
@@ -70,7 +71,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     CovalentMediaModule,
     PerfectScrollbarModule.forRoot(PERFECT_SCROLLBAR_CONFIG),
     QuickAccessModule,
-    TransactionsMonitoringMainModule
+    TransactionsMonitoringMainModule,
+    TransactionsMonitoringSegmentsModule
   ],
   declarations: [
     MainComponent,

@@ -90,7 +90,7 @@
                         </a>
                         <mat-menu #transactionsMonitoringMenu="matMenu" class="transactions-monitoring-menu" yPosition="below" xPosition="after">
                             <div class="caption">Dashboard</div>
-                            <a mat-list-item [routerLink]="'/transactionsMonitoringMain'" routerLinkActive="active"
+                            <a class="sub-item" mat-list-item [routerLink]="'/transactionsMonitoringMain'" routerLinkActive="active"
                                *hasPermission="{ id: 'teller_operations', accessLevel: 'READ' }">
                                 <i [ngClass]="'iconsminds-target-market'"></i>
                                 {{'Main' | translate}}
@@ -119,7 +119,7 @@
                             </a>
                             <hr>
                             <div class="caption">Configuration</div>
-                            <a mat-list-item [routerLink]="'/transactions-monitoring-segments'" routerLinkActive="active"
+                            <a class="sub-item" mat-list-item [routerLink]="'/transactionsMonitoringSegments'" routerLinkActive="active"
                                *hasPermission="{ id: 'teller_operations', accessLevel: 'READ' }">
                                 <i [ngClass]="'simple-icon-organization'"></i>
                                 {{'Segments' | translate}}

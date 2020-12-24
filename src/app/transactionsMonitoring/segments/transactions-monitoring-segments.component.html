@@ -1,0 +1,1290 @@
+<div class="mat-content" flex mat-scroll-y>
+    <div class="row">
+        <div class="col-12">
+            <br>
+            <h1>Segments and rule configuration</h1>
+            <div class="separator mb-5"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-12" style="margin-bottom: 20px">
+            <div class="panel card border">
+                <div class="panel-body card-block card-body">
+                    <div class="segment-menu-item">
+                        <h5>Priority: 0</h5>
+                        <hr>
+                        <div class="row">
+                            <div class="col-6">All transactions</div>
+                            <div class="add-configuration-button col-6">
+                                <button type="button" class="btn btn-primary" (click)="showContent = true">
+                                    <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="segment-menu-item">
+                        <h5>Priority: 1</h5>
+                        <hr>
+                        <div class="row">
+                            <div class="col-6">Medium Risk Customers</div>
+                            <div class="add-configuration-button col-6">
+                                <button type="button" class="btn btn-primary">
+                                    <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">High Risk Customers</div>
+                            <div class="add-configuration-button col-6">
+                                <button type="button" class="btn btn-primary">
+                                    <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">Low Risk Customers</div>
+                            <div class="add-configuration-button col-6">
+                                <button type="button" class="btn btn-primary">
+                                    <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="segment-menu-item">
+                        <h5>Priority: 2</h5>
+                        <hr>
+                        <div class="row">
+                            <div class="col-6">Non-UK</div>
+                            <div class="add-configuration-button col-6">
+                                <button type="button" class="btn btn-primary">
+                                    <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">UK</div>
+                            <div class="add-configuration-button col-6">
+                                <button type="button" class="btn btn-primary">
+                                    <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-12">
+            <div class="panel card border" style="height: 100%;">
+                <div class="panel-body card-block card-body">
+                    <div class="segment-content-empty" *ngIf="!showContent">Select a segment</div>
+                    <div class="segment-content" *ngIf="showContent">
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                Large Balance (Inbound/Outbound) (LB)
+                                <span class="badge badge-secondary">1</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary" (click)="isCollapsedLB = !isCollapsedLB"
+                                            [attr.aria-expanded]="!isCollapsedLB" aria-controls="collapseLB">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row" id="collapseLB" [collapse]="isCollapsedLB">
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="segment-configuration-item">
+                                        <div class="segment-configuration-item-title">All transactions (LB)
+                                            <div class="switcher">
+                                                <div class="custom-control custom-switch"><input type="checkbox" id="switchLB1"
+                                                                                                 class="custom-control-input" checked><label
+                                                        for="switchLB1" class="custom-control-label">On</label></div>
+                                            </div>
+                                        </div>
+                                        <div class="segment-configuration-item-body">When the account balance is greater than or equal to
+                                            <input type="text" formControlName="number" placeholder=""/>
+                                            after an INBOUND/OUTBOUND transaction then apply
+                                            <mat-select formControlName="DORMANT" style="width: 200px">
+                                                <mat-option value="alert_level_1">Alert Level 1</mat-option>
+                                                <mat-option value="alert_level_1">Alert Level 2</mat-option>
+                                                <mat-option value="alert_level_1">Alert Level 3</mat-option>
+                                                <mat-option value="alert_level_1">Alert Level 4</mat-option>
+                                                <mat-option value="alert_level_1">Hold Transaction</mat-option>
+                                                <mat-option value="alert_level_1">Decline transaction</mat-option>
+                                            </mat-select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                Transaction Value Outlier (Inbound/Outbound) (TVO)
+                                <span class="badge badge-secondary">1</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                Activity on Dormant Account (ADA)
+                                <span class="badge badge-secondary">7</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                High Velocity (Inbound/Outbound) 7 days (HV7)
+                                <span class="badge badge-secondary">2</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                Transaction Limit (TL)
+                                <span class="badge badge-secondary">4</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary" (click)="isCollapsedTL = !isCollapsedTL"
+                                            [attr.aria-expanded]="!isCollapsedTL" aria-controls="collapseTL">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseTL" [collapse]="isCollapsedTL">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="segment-configuration-item">
+                                            <div class="segment-configuration-item-title">All transactions (TL)
+                                                <div class="switcher">
+                                                    <div class="custom-control custom-switch"><input type="checkbox" id="switchTL1"
+                                                                                                     class="custom-control-input" checked><label
+                                                            for="switchTL1" class="custom-control-label">On</label></div>
+                                                </div>
+                                            </div>
+                                            <div class="segment-configuration-item-body">When a transaction is greater
+                                                than or equal to the limit of <input type="text" formControlName="number" placeholder=""/>
+                                                and the direction is INBOUND, then apply
+                                                <mat-select formControlName="TL1" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Alert Level 1</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 2</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 3</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 4</mat-option>
+                                                    <mat-option value="alert_level_1">Hold Transaction</mat-option>
+                                                    <mat-option value="alert_level_1">Decline transaction</mat-option>
+                                                </mat-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="segment-configuration-item">
+                                            <div class="segment-configuration-item-title">All transactions (TL)
+                                                <div class="switcher">
+                                                    <div class="custom-control custom-switch"><input type="checkbox" id="switchTL2"
+                                                                                                     class="custom-control-input" checked><label
+                                                            for="switchTL2" class="custom-control-label">On</label></div>
+                                                </div>
+                                            </div>
+                                            <div class="segment-configuration-item-body">When a transaction is greater
+                                                than or equal to the limit of <input type="text" formControlName="number" placeholder=""/>
+                                                and the direction is INBOUND, then apply
+                                                <mat-select formControlName="TL1" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Alert Level 1</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 2</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 3</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 4</mat-option>
+                                                    <mat-option value="alert_level_1">Hold Transaction</mat-option>
+                                                    <mat-option value="alert_level_1">Decline transaction</mat-option>
+                                                </mat-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="segment-configuration-item">
+                                            <div class="segment-configuration-item-title">All transactions (TL)
+                                                <div class="switcher">
+                                                    <div class="custom-control custom-switch"><input type="checkbox" id="switchTL3"
+                                                                                                     class="custom-control-input" checked><label
+                                                            for="switchTL3" class="custom-control-label">On</label></div>
+                                                </div>
+                                            </div>
+                                            <div class="segment-configuration-item-body">When a transaction is greater
+                                                than or equal to the limit of <input type="text" formControlName="number" placeholder=""/>
+                                                and the direction is OUTBOUND, then apply
+                                                <mat-select formControlName="TL1" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Alert Level 1</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 2</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 3</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 4</mat-option>
+                                                    <mat-option value="alert_level_1">Hold Transaction</mat-option>
+                                                    <mat-option value="alert_level_1">Decline transaction</mat-option>
+                                                </mat-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="segment-configuration-item">
+                                            <div class="segment-configuration-item-title">All transactions (TL)
+                                                <div class="switcher">
+                                                    <div class="custom-control custom-switch"><input type="checkbox" id="switchTL4"
+                                                                                                     class="custom-control-input" checked><label
+                                                            for="switchTL4" class="custom-control-label">On</label></div>
+                                                </div>
+                                            </div>
+                                            <div class="segment-configuration-item-body">When a transaction is greater
+                                                than or equal to the limit of <input type="text" formControlName="number" placeholder=""/>
+                                                and the direction is OUTBOUND, then apply
+                                                <mat-select formControlName="TL1" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Alert Level 1</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 2</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 3</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 4</mat-option>
+                                                    <mat-option value="alert_level_1">Hold Transaction</mat-option>
+                                                    <mat-option value="alert_level_1">Decline transaction</mat-option>
+                                                </mat-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                Same Account, Multiple Users (SAMU)
+                                <span class="badge badge-secondary">1</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                Multiple Accounts, One Counterparty (MAOC)
+                                <span class="badge badge-secondary">1</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                Multiple Counterparty,  One Account (MCOA)
+                                <span class="badge badge-secondary">2</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                High Risk Country (HRC)
+                                <span class="badge badge-secondary">2</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary" (click)="isCollapsedHRC = !isCollapsedHRC"
+                                            [attr.aria-expanded]="!isCollapsedHRC" aria-controls="collapseHRC">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseHRC" [collapse]="isCollapsedHRC">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="segment-configuration-item">
+                                            <div class="segment-configuration-item-title">All transactions (LB)
+                                                <div class="switcher">
+                                                    <div class="custom-control custom-switch"><input type="checkbox" id="switchHRC1"
+                                                                                                     class="custom-control-input" checked><label
+                                                            for="switchHRC1" class="custom-control-label">On</label></div>
+                                                </div>
+                                            </div>
+                                            <div class="segment-configuration-item-body">When the counterparty country matches a high risk country, then apply
+                                                <mat-select formControlName="DORMANT" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Alert Level 1</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 2</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 3</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 4</mat-option>
+                                                    <mat-option value="alert_level_1">Hold Transaction</mat-option>
+                                                    <mat-option value="alert_level_1">Decline transaction</mat-option>
+                                                </mat-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="segment-configuration-item">
+                                            <div class="segment-configuration-item-title">All transactions (LB)
+                                                <div class="switcher">
+                                                    <div class="custom-control custom-switch"><input type="checkbox" id="switchHRC2"
+                                                                                                     class="custom-control-input" checked><label
+                                                            for="switchHRC2" class="custom-control-label">On</label></div>
+                                                </div>
+                                            </div>
+                                            <div class="segment-configuration-item-body">When the counterparty country matches a high risk country, then apply
+                                                <mat-select formControlName="DORMANT" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Alert Level 1</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 2</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 3</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 4</mat-option>
+                                                    <mat-option value="alert_level_1">Hold Transaction</mat-option>
+                                                    <mat-option value="alert_level_1">Decline transaction</mat-option>
+                                                </mat-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                Beneficiary Sanctions Screening (BSANC)
+                                <span class="badge badge-secondary">2</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary" (click)="isCollapsedBSANC = !isCollapsedBSANC"
+                                            [attr.aria-expanded]="!isCollapsedBSANC" aria-controls="collapseBSANC">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseBSANC" [collapse]="isCollapsedBSANC">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="segment-configuration-item">
+                                            <div class="segment-configuration-item-title">All transactions (BSANC)
+                                                <div class="switcher">
+                                                    <div class="custom-control custom-switch"><input type="checkbox" id="switchBSANC1"
+                                                                                                     class="custom-control-input" checked><label
+                                                            for="switchBSANC1" class="custom-control-label">On</label></div>
+                                                </div>
+                                            </div>
+                                            <div class="segment-configuration-item-body">When the beneficiary has been found on the following
+                                                <mat-select multiple="" formControlName="BSANC" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Arab states</mat-option>
+                                                    <mat-option value="alert_level_1">Argentina</mat-option>
+                                                </mat-select>
+                                                Sanctions lists,
+                                                <mat-select multiple="" formControlName="BSANC" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Albania</mat-option>
+                                                    <mat-option value="alert_level_1">Andorra</mat-option>
+                                                    <mat-option value="alert_level_1">Argentina</mat-option>
+                                                </mat-select>
+                                                Warning lists and
+                                                <mat-select multiple="" formControlName="BSANC" style="width: 200px">
+                                                    <mat-option value="alert_level_1">1</mat-option>
+                                                    <mat-option value="alert_level_1">2</mat-option>
+                                                    <mat-option value="alert_level_1">3</mat-option>
+                                                </mat-select>
+                                                Fitness & Probity lists with a search fuzziness of
+                                                <mat-select formControlName="BSANC" style="width: 200px">
+                                                    <mat-option value="alert_level_1">0%</mat-option>
+                                                    <mat-option value="alert_level_1">10%</mat-option>
+                                                    <mat-option value="alert_level_1">20%</mat-option>
+                                                    <mat-option value="alert_level_1">30%</mat-option>
+                                                    <mat-option value="alert_level_1">40%</mat-option>
+                                                    <mat-option value="alert_level_1">50%</mat-option>
+                                                    <mat-option value="alert_level_1">60%</mat-option>
+                                                    <mat-option value="alert_level_1">70%</mat-option>
+                                                    <mat-option value="alert_level_1">80%</mat-option>
+                                                    <mat-option value="alert_level_1">90%</mat-option>
+                                                    <mat-option value="alert_level_1">100%</mat-option>
+                                                </mat-select>
+                                                and using the algorithms
+                                                <mat-select formControlName="BSANC" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Algorithm 1</mat-option>
+                                                    <mat-option value="alert_level_1">Algorithm 2</mat-option>
+                                                    <mat-option value="alert_level_1">Algorithm 3</mat-option>
+                                                </mat-select>
+                                                ,then apply
+                                                <mat-select formControlName="BSANC" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Alert Level 1</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 2</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 3</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 4</mat-option>
+                                                    <mat-option value="alert_level_1">Hold Transaction</mat-option>
+                                                    <mat-option value="alert_level_1">Decline transaction</mat-option>
+                                                </mat-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="segment-configuration-item">
+                                            <div class="segment-configuration-item-title">All transactions (BSANC)
+                                                <div class="switcher">
+                                                    <div class="custom-control custom-switch"><input type="checkbox" id="switchBSANC2"
+                                                                                                     class="custom-control-input" checked><label
+                                                            for="switchBSANC2" class="custom-control-label">On</label></div>
+                                                </div>
+                                            </div>
+                                            <div class="segment-configuration-item-body">When the beneficiary has been found on the following
+                                                <mat-select multiple="" formControlName="BSANC" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Arab states</mat-option>
+                                                    <mat-option value="alert_level_1">Argentina</mat-option>
+                                                </mat-select>
+                                                Sanctions lists,
+                                                <mat-select multiple="" formControlName="BSANC" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Albania</mat-option>
+                                                    <mat-option value="alert_level_1">Andorra</mat-option>
+                                                    <mat-option value="alert_level_1">Argentina</mat-option>
+                                                </mat-select>
+                                                Warning lists and
+                                                <mat-select multiple="" formControlName="BSANC" style="width: 200px">
+                                                    <mat-option value="alert_level_1">1</mat-option>
+                                                    <mat-option value="alert_level_1">2</mat-option>
+                                                    <mat-option value="alert_level_1">3</mat-option>
+                                                </mat-select>
+                                                Fitness & Probity lists with a search fuzziness of
+                                                <mat-select formControlName="BSANC" style="width: 200px">
+                                                    <mat-option value="alert_level_1">0%</mat-option>
+                                                    <mat-option value="alert_level_1">10%</mat-option>
+                                                    <mat-option value="alert_level_1">20%</mat-option>
+                                                    <mat-option value="alert_level_1">30%</mat-option>
+                                                    <mat-option value="alert_level_1">40%</mat-option>
+                                                    <mat-option value="alert_level_1">50%</mat-option>
+                                                    <mat-option value="alert_level_1">60%</mat-option>
+                                                    <mat-option value="alert_level_1">70%</mat-option>
+                                                    <mat-option value="alert_level_1">80%</mat-option>
+                                                    <mat-option value="alert_level_1">90%</mat-option>
+                                                    <mat-option value="alert_level_1">100%</mat-option>
+                                                </mat-select>
+                                                and using the algorithms
+                                                <mat-select formControlName="BSANC" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Algorithm 1</mat-option>
+                                                    <mat-option value="alert_level_1">Algorithm 2</mat-option>
+                                                    <mat-option value="alert_level_1">Algorithm 3</mat-option>
+                                                </mat-select>
+                                                ,then apply
+                                                <mat-select formControlName="BSANC" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Alert Level 1</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 2</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 3</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 4</mat-option>
+                                                    <mat-option value="alert_level_1">Hold Transaction</mat-option>
+                                                    <mat-option value="alert_level_1">Decline transaction</mat-option>
+                                                </mat-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                Payer Sanction Screening (PSANC)
+                                <span class="badge badge-secondary">2</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary" (click)="isCollapsedPSANC = !isCollapsedPSANC"
+                                            [attr.aria-expanded]="!isCollapsedPSANC" aria-controls="collapsePSANC">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapsePSANC" [collapse]="isCollapsedPSANC">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="segment-configuration-item">
+                                            <div class="segment-configuration-item-title">All transactions (BSANC)
+                                                <div class="switcher">
+                                                    <div class="custom-control custom-switch"><input type="checkbox" id="switchPSANC1"
+                                                                                                     class="custom-control-input" checked><label
+                                                            for="switchPSANC1" class="custom-control-label">On</label></div>
+                                                </div>
+                                            </div>
+                                            <div class="segment-configuration-item-body">When the beneficiary has been found on the following
+                                                <mat-select multiple="" formControlName="BSANC" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Arab states</mat-option>
+                                                    <mat-option value="alert_level_1">Argentina</mat-option>
+                                                </mat-select>
+                                                Sanctions lists,
+                                                <mat-select multiple="" formControlName="BSANC" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Albania</mat-option>
+                                                    <mat-option value="alert_level_1">Andorra</mat-option>
+                                                    <mat-option value="alert_level_1">Argentina</mat-option>
+                                                </mat-select>
+                                                Warning lists and
+                                                <mat-select multiple="" formControlName="BSANC" style="width: 200px">
+                                                    <mat-option value="alert_level_1">1</mat-option>
+                                                    <mat-option value="alert_level_1">2</mat-option>
+                                                    <mat-option value="alert_level_1">3</mat-option>
+                                                </mat-select>
+                                                Fitness & Probity lists with a search fuzziness of
+                                                <mat-select formControlName="BSANC" style="width: 200px">
+                                                    <mat-option value="alert_level_1">0%</mat-option>
+                                                    <mat-option value="alert_level_1">10%</mat-option>
+                                                    <mat-option value="alert_level_1">20%</mat-option>
+                                                    <mat-option value="alert_level_1">30%</mat-option>
+                                                    <mat-option value="alert_level_1">40%</mat-option>
+                                                    <mat-option value="alert_level_1">50%</mat-option>
+                                                    <mat-option value="alert_level_1">60%</mat-option>
+                                                    <mat-option value="alert_level_1">70%</mat-option>
+                                                    <mat-option value="alert_level_1">80%</mat-option>
+                                                    <mat-option value="alert_level_1">90%</mat-option>
+                                                    <mat-option value="alert_level_1">100%</mat-option>
+                                                </mat-select>
+                                                and using the algorithms
+                                                <mat-select formControlName="BSANC" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Algorithm 1</mat-option>
+                                                    <mat-option value="alert_level_1">Algorithm 2</mat-option>
+                                                    <mat-option value="alert_level_1">Algorithm 3</mat-option>
+                                                </mat-select>
+                                                ,then apply
+                                                <mat-select formControlName="BSANC" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Alert Level 1</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 2</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 3</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 4</mat-option>
+                                                    <mat-option value="alert_level_1">Hold Transaction</mat-option>
+                                                    <mat-option value="alert_level_1">Decline transaction</mat-option>
+                                                </mat-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="segment-configuration-item">
+                                            <div class="segment-configuration-item-title">All transactions (BSANC)
+                                                <div class="switcher">
+                                                    <div class="custom-control custom-switch"><input type="checkbox" id="switchPSANC2"
+                                                                                                     class="custom-control-input" checked><label
+                                                            for="switchPSANC2" class="custom-control-label">On</label></div>
+                                                </div>
+                                            </div>
+                                            <div class="segment-configuration-item-body">When the beneficiary has been found on the following
+                                                <mat-select multiple="" formControlName="BSANC" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Arab states</mat-option>
+                                                    <mat-option value="alert_level_1">Argentina</mat-option>
+                                                </mat-select>
+                                                Sanctions lists,
+                                                <mat-select multiple="" formControlName="BSANC" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Albania</mat-option>
+                                                    <mat-option value="alert_level_1">Andorra</mat-option>
+                                                    <mat-option value="alert_level_1">Argentina</mat-option>
+                                                </mat-select>
+                                                Warning lists and
+                                                <mat-select multiple="" formControlName="BSANC" style="width: 200px">
+                                                    <mat-option value="alert_level_1">1</mat-option>
+                                                    <mat-option value="alert_level_1">2</mat-option>
+                                                    <mat-option value="alert_level_1">3</mat-option>
+                                                </mat-select>
+                                                Fitness & Probity lists with a search fuzziness of
+                                                <mat-select formControlName="BSANC" style="width: 200px">
+                                                    <mat-option value="alert_level_1">0%</mat-option>
+                                                    <mat-option value="alert_level_1">10%</mat-option>
+                                                    <mat-option value="alert_level_1">20%</mat-option>
+                                                    <mat-option value="alert_level_1">30%</mat-option>
+                                                    <mat-option value="alert_level_1">40%</mat-option>
+                                                    <mat-option value="alert_level_1">50%</mat-option>
+                                                    <mat-option value="alert_level_1">60%</mat-option>
+                                                    <mat-option value="alert_level_1">70%</mat-option>
+                                                    <mat-option value="alert_level_1">80%</mat-option>
+                                                    <mat-option value="alert_level_1">90%</mat-option>
+                                                    <mat-option value="alert_level_1">100%</mat-option>
+                                                </mat-select>
+                                                and using the algorithms
+                                                <mat-select formControlName="BSANC" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Algorithm 1</mat-option>
+                                                    <mat-option value="alert_level_1">Algorithm 2</mat-option>
+                                                    <mat-option value="alert_level_1">Algorithm 3</mat-option>
+                                                </mat-select>
+                                                ,then apply
+                                                <mat-select formControlName="BSANC" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Alert Level 1</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 2</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 3</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 4</mat-option>
+                                                    <mat-option value="alert_level_1">Hold Transaction</mat-option>
+                                                    <mat-option value="alert_level_1">Decline transaction</mat-option>
+                                                </mat-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                Payment Limit (PL)
+                                <span class="badge badge-secondary">6</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                Restricted Country (RCTY)
+                                <span class="badge badge-secondary">1</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary" (click)="isCollapsedRCTY = !isCollapsedRCTY"
+                                            [attr.aria-expanded]="!isCollapsedRCTY" aria-controls="collapseRCTY">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseRCTY" [collapse]="isCollapsedRCTY">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="segment-configuration-item">
+                                            <div class="segment-configuration-item-title">All transactions (RCTY)
+                                                <div class="switcher">
+                                                    <div class="custom-control custom-switch"><input type="checkbox" id="switchRCTY1"
+                                                                                                     class="custom-control-input" checked><label
+                                                            for="switchRCTY1" class="custom-control-label">On</label></div>
+                                                </div>
+                                            </div>
+                                            <div class="segment-configuration-item-body">When a beneficiary
+                                                is in a restricted country, then apply
+                                                <mat-select formControlName="RCTY1" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Alert Level 1</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 2</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 3</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 4</mat-option>
+                                                    <mat-option value="alert_level_1">Hold Transaction</mat-option>
+                                                    <mat-option value="alert_level_1">Decline transaction</mat-option>
+                                                </mat-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                Transaction Size Outlier (TSO)
+                                <span class="badge badge-secondary">1</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                Period Estimations Exceeded (PEE30)
+                                <span class="badge badge-secondary">1</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                Payer Payments from/to New Country (PNCTY)
+                                <span class="badge badge-secondary">1</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary" (click)="isCollapsedPNCTY = !isCollapsedPNCTY"
+                                            [attr.aria-expanded]="!isCollapsedPNCTY" aria-controls="collapsePNCTY">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapsePNCTY" [collapse]="isCollapsedPNCTY">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="segment-configuration-item">
+                                            <div class="segment-configuration-item-title">All transactions (PNCTY)
+                                                <div class="switcher">
+                                                    <div class="custom-control custom-switch"><input type="checkbox" id="switchPNCTY1"
+                                                                                                     class="custom-control-input" checked><label
+                                                            for="switchPNCTY1" class="custom-control-label">On</label></div>
+                                                </div>
+                                            </div>
+                                            <div class="segment-configuration-item-body">When a payer or beneficiary
+                                                is from a new country
+                                                then apply
+
+                                                <mat-select formControlName="PNCTY1" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Alert Level 1</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 2</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 3</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 4</mat-option>
+                                                    <mat-option value="alert_level_1">Hold Transaction</mat-option>
+                                                    <mat-option value="alert_level_1">Decline transaction</mat-option>
+                                                </mat-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                Payments using New Currency (NCCY)
+                                <span class="badge badge-secondary">1</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary" (click)="isCollapsedNCCY = !isCollapsedNCCY"
+                                            [attr.aria-expanded]="!isCollapsedNCCY" aria-controls="collapseNCCY">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseNCCY" [collapse]="isCollapsedNCCY">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="segment-configuration-item">
+                                            <div class="segment-configuration-item-title">All transactions (NCCY)
+                                                <div class="switcher">
+                                                    <div class="custom-control custom-switch"><input type="checkbox" id="switchNCCY1"
+                                                                                                     class="custom-control-input" checked><label
+                                                            for="switchNCCY1" class="custom-control-label">On</label></div>
+                                                </div>
+                                            </div>
+                                            <div class="segment-configuration-item-body">When a transaction is
+                                                made using new currency,
+                                                then apply
+
+                                                <mat-select formControlName="NCCY1" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Alert Level 1</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 2</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 3</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 4</mat-option>
+                                                    <mat-option value="alert_level_1">Hold Transaction</mat-option>
+                                                    <mat-option value="alert_level_1">Decline transaction</mat-option>
+                                                </mat-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                Inactive clients for 90 days (IC90)
+                                <span class="badge badge-secondary">1</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary" (click)="isCollapsedIC90 = !isCollapsedIC90"
+                                            [attr.aria-expanded]="!isCollapsedIC90" aria-controls="collapseIC90">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseIC90" [collapse]="isCollapsedIC90">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="segment-configuration-item">
+                                            <div class="segment-configuration-item-title">All transactions (IC90)
+                                                <div class="switcher">
+                                                    <div class="custom-control custom-switch"><input type="checkbox" id="switchIC901"
+                                                                                                     class="custom-control-input" checked><label
+                                                            for="switchIC901" class="custom-control-label">On</label></div>
+                                                </div>
+                                            </div>
+                                            <div class="segment-configuration-item-body">When a payer transacts after
+                                                90 days of inactivity,
+                                                then apply
+                                                <mat-select formControlName="STRUCT1" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Alert Level 1</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 2</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 3</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 4</mat-option>
+                                                    <mat-option value="alert_level_1">Hold Transaction</mat-option>
+                                                    <mat-option value="alert_level_1">Decline transaction</mat-option>
+                                                </mat-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                High Risk Country – Age Check (HRCAC)
+                                <span class="badge badge-secondary">1</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary" (click)="isCollapsedHRCAC = !isCollapsedHRCAC"
+                                            [attr.aria-expanded]="!isCollapsedHRCAC" aria-controls="collapseHRCAC">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseHRCAC" [collapse]="isCollapsedHRCAC">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="segment-configuration-item">
+                                            <div class="segment-configuration-item-title">All transactions (HRCAC)
+                                                <div class="switcher">
+                                                    <div class="custom-control custom-switch"><input type="checkbox" id="switchHRCAC1"
+                                                                                                     class="custom-control-input" checked><label
+                                                            for="switchHRCAC1" class="custom-control-label">On</label></div>
+                                                </div>
+                                            </div>
+                                            <div class="segment-configuration-item-body">When payer age below 25 or
+                                                over 65, amount is greater than
+                                                <input type="text" formControlName="number" placeholder=""/>
+                                                and the transaction has been sent to a high risk country,
+                                                then apply
+                                                <mat-select formControlName="STRUCT1" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Alert Level 1</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 2</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 3</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 4</mat-option>
+                                                    <mat-option value="alert_level_1">Hold Transaction</mat-option>
+                                                    <mat-option value="alert_level_1">Decline transaction</mat-option>
+                                                </mat-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                High Velocity Payer (HPV)
+                                <span class="badge badge-secondary">1</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                High Velocity Beneficiary (HVB)
+                                <span class="badge badge-secondary">1</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                Risk Words Reference Text (RWRT)
+                                <span class="badge badge-secondary">2</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                Transaction Value Limit – Single Transaction (TVL-ST)
+                                <span class="badge badge-secondary">1</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary" (click)="isCollapsedTVLST = !isCollapsedTVLST"
+                                            [attr.aria-expanded]="!isCollapsedTVLST" aria-controls="collapseTVLST">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseTVLST" [collapse]="isCollapsedTVLST">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="segment-configuration-item">
+                                            <div class="segment-configuration-item-title">All transactions (TVL-ST)
+                                                <div class="switcher">
+                                                    <div class="custom-control custom-switch"><input type="checkbox" id="switchTVLST1"
+                                                                                                     class="custom-control-input" checked><label
+                                                            for="switchTVLST1" class="custom-control-label">On</label></div>
+                                                </div>
+                                            </div>
+                                            <div class="segment-configuration-item-body">When the transaction is greater than
+                                                <input type="text" formControlName="number" placeholder=""/>
+                                                then apply
+                                                <mat-select formControlName="STRUCT1" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Alert Level 1</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 2</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 3</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 4</mat-option>
+                                                    <mat-option value="alert_level_1">Hold Transaction</mat-option>
+                                                    <mat-option value="alert_level_1">Decline transaction</mat-option>
+                                                </mat-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                Transaction Value Limit – Historic Average (TVL-HA)
+                                <span class="badge badge-secondary">1</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary" (click)="isCollapsedTVLHA = !isCollapsedTVLHA"
+                                            [attr.aria-expanded]="!isCollapsedTVLHA" aria-controls="collapseTVLHA">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseTVLHA" [collapse]="isCollapsedTVLHA">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="segment-configuration-item">
+                                            <div class="segment-configuration-item-title">All transactions (TVL-HA)
+                                                <div class="switcher">
+                                                    <div class="custom-control custom-switch"><input type="checkbox" id="switchTVLHA1"
+                                                                                                     class="custom-control-input" checked><label
+                                                            for="switchTVLHA1" class="custom-control-label">On</label></div>
+                                                </div>
+                                            </div>
+                                            <div class="segment-configuration-item-body">When the historic average
+                                                transaction is greater than
+                                                <input type="text" formControlName="number" placeholder=""/>
+                                                then apply
+                                                <mat-select formControlName="STRUCT1" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Alert Level 1</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 2</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 3</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 4</mat-option>
+                                                    <mat-option value="alert_level_1">Hold Transaction</mat-option>
+                                                    <mat-option value="alert_level_1">Decline transaction</mat-option>
+                                                </mat-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                Transaction Value Limit – Peer Average (TVL-PA)
+                                <span class="badge badge-secondary">1</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary" (click)="isCollapsedTVLPA = !isCollapsedTVLPA"
+                                            [attr.aria-expanded]="!isCollapsedTVLPA" aria-controls="collapseTVLPA">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseTVLPA" [collapse]="isCollapsedTVLPA">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="segment-configuration-item">
+                                            <div class="segment-configuration-item-title">All transactions (TVL-PA)
+                                                <div class="switcher">
+                                                    <div class="custom-control custom-switch"><input type="checkbox" id="switchTVLPA1"
+                                                                                                     class="custom-control-input" checked><label
+                                                            for="switchTVLPA1" class="custom-control-label">On</label></div>
+                                                </div>
+                                            </div>
+                                            <div class="segment-configuration-item-body">When the percentage of transaction
+                                                is greater than
+                                                <input type="text" formControlName="number" placeholder=""/>
+                                                then apply
+                                                <mat-select formControlName="STRUCT1" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Alert Level 1</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 2</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 3</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 4</mat-option>
+                                                    <mat-option value="alert_level_1">Hold Transaction</mat-option>
+                                                    <mat-option value="alert_level_1">Decline transaction</mat-option>
+                                                </mat-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                Transaction Value Limit – Percentage of Balance (TVL-PB)
+                                <span class="badge badge-secondary">1</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary" (click)="isCollapsedTVLPB = !isCollapsedTVLPB"
+                                            [attr.aria-expanded]="!isCollapsedTVLPB" aria-controls="collapseTVLPB">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseTVLPB" [collapse]="isCollapsedTVLPB">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="segment-configuration-item">
+                                            <div class="segment-configuration-item-title">All transactions (TVL-PB)
+                                                <div class="switcher">
+                                                    <div class="custom-control custom-switch"><input type="checkbox" id="switchTVLPB1"
+                                                                                                     class="custom-control-input" checked><label
+                                                            for="switchTVLPB1" class="custom-control-label">On</label></div>
+                                                </div>
+                                            </div>
+                                            <div class="segment-configuration-item-body">When the percentage of transaction
+                                                is greater than
+                                                <input type="text" formControlName="number" placeholder=""/> %
+                                                then apply
+                                                <mat-select formControlName="STRUCT1" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Alert Level 1</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 2</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 3</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 4</mat-option>
+                                                    <mat-option value="alert_level_1">Hold Transaction</mat-option>
+                                                    <mat-option value="alert_level_1">Decline transaction</mat-option>
+                                                </mat-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                Transaction Value Limit – 7 Days (TVL-7D)
+                                <span class="badge badge-secondary">1</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary" (click)="isCollapsedTVL7D = !isCollapsedTVL7D"
+                                            [attr.aria-expanded]="!isCollapsedTVL7D" aria-controls="collapseTVL7D">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseTVL7D" [collapse]="isCollapsedTVL7D">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="segment-configuration-item">
+                                            <div class="segment-configuration-item-title">All transactions (TVL-7D)
+                                                <div class="switcher">
+                                                    <div class="custom-control custom-switch"><input type="checkbox" id="switchTVL7D1"
+                                                                                                     class="custom-control-input" checked><label
+                                                            for="switchTVL7D1" class="custom-control-label">On</label></div>
+                                                </div>
+                                            </div>
+                                            <div class="segment-configuration-item-body">When a customer’s total value
+                                                of Outbound transactions over 7 days is greater than
+                                                <input type="text" formControlName="number" placeholder=""/>
+                                                then apply
+                                                <mat-select formControlName="STRUCT1" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Alert Level 1</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 2</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 3</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 4</mat-option>
+                                                    <mat-option value="alert_level_1">Hold Transaction</mat-option>
+                                                    <mat-option value="alert_level_1">Decline transaction</mat-option>
+                                                </mat-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                Transaction Value Limit – One Counterparty (TVL-OC)
+                                <span class="badge badge-secondary">1</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary" (click)="isCollapsedTVLOC = !isCollapsedTVLOC"
+                                            [attr.aria-expanded]="!isCollapsedTVLOC" aria-controls="collapseTVLOC">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseTVLOC" [collapse]="isCollapsedTVLOC">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="segment-configuration-item">
+                                            <div class="segment-configuration-item-title">All transactions (TVL-OC)
+                                                <div class="switcher">
+                                                    <div class="custom-control custom-switch"><input type="checkbox" id="switchTVLOC1"
+                                                                                                     class="custom-control-input" checked><label
+                                                            for="switchTVLOC1" class="custom-control-label">On</label></div>
+                                                </div>
+                                            </div>
+                                            <div class="segment-configuration-item-body">When a customer’s total value
+                                                of Outbound transactions over 30 days to the same Counterparty
+                                                is greater than <input type="text" formControlName="number" placeholder=""/>
+                                                then apply
+                                                <mat-select formControlName="STRUCT1" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Alert Level 1</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 2</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 3</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 4</mat-option>
+                                                    <mat-option value="alert_level_1">Hold Transaction</mat-option>
+                                                    <mat-option value="alert_level_1">Decline transaction</mat-option>
+                                                </mat-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                Transaction on Dormant Account (DORMANT)
+                                <span class="badge badge-secondary">1</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary" (click)="isCollapsedDormant = !isCollapsedDormant"
+                                            [attr.aria-expanded]="!isCollapsedDormant" aria-controls="collapseDormant">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row" id="collapseDormant" [collapse]="isCollapsedDormant">
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="segment-configuration-item">
+                                        <div class="segment-configuration-item-title">All transactions (DORMANT)
+                                            <div class="switcher">
+                                                <div class="custom-control custom-switch"><input type="checkbox" id="customSwitch1"
+                                                                                                 class="custom-control-input" checked><label
+                                                        for="customSwitch1" class="custom-control-label">On</label></div>
+                                            </div>
+                                        </div>
+                                        <div class="segment-configuration-item-body">When the transaction is greater than
+                                            <input type="text" formControlName="number" placeholder=""/>
+                                            then apply
+                                            <mat-select formControlName="DORMANT" style="width: 200px">
+                                                <mat-option value="alert_level_1">Alert Level 1</mat-option>
+                                                <mat-option value="alert_level_1">Alert Level 2</mat-option>
+                                                <mat-option value="alert_level_1">Alert Level 3</mat-option>
+                                                <mat-option value="alert_level_1">Alert Level 4</mat-option>
+                                                <mat-option value="alert_level_1">Hold Transaction</mat-option>
+                                                <mat-option value="alert_level_1">Decline transaction</mat-option>
+                                            </mat-select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                Structuring (STRUCT)
+                                <span class="badge badge-secondary">3</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary" (click)="isCollapsedSTRUCT = !isCollapsedSTRUCT"
+                                            [attr.aria-expanded]="!isCollapsedSTRUCT" aria-controls="collapseSTRUCT">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseSTRUCT" [collapse]="isCollapsedSTRUCT">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="segment-configuration-item">
+                                            <div class="segment-configuration-item-title">All transactions (STRUCT)
+                                                <div class="switcher">
+                                                    <div class="custom-control custom-switch"><input type="checkbox" id="switchSTRUCT1"
+                                                                                                     class="custom-control-input" checked><label
+                                                            for="switchSTRUCT1" class="custom-control-label">On</label></div>
+                                                </div>
+                                            </div>
+                                            <div class="segment-configuration-item-body">When <input type="text" formControlName="number" placeholder=""/>
+                                                transactions have been sent just below reporting threshold
+                                                , then apply
+                                                <mat-select formControlName="STRUCT1" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Alert Level 1</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 2</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 3</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 4</mat-option>
+                                                    <mat-option value="alert_level_1">Hold Transaction</mat-option>
+                                                    <mat-option value="alert_level_1">Decline transaction</mat-option>
+                                                </mat-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="segment-configuration-item">
+                                            <div class="segment-configuration-item-title">All transactions (STRUCT)
+                                                <div class="switcher">
+                                                    <div class="custom-control custom-switch"><input type="checkbox" id="switchSTRUCT2"
+                                                                                                     class="custom-control-input" checked><label
+                                                            for="switchSTRUCT2" class="custom-control-label">On</label></div>
+                                                </div>
+                                            </div>
+                                            <div class="segment-configuration-item-body">When <input type="text" formControlName="number" placeholder=""/>
+                                                transactions have been sent just below reporting threshold
+                                                , then apply
+                                                <mat-select formControlName="STRUCT2" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Alert Level 1</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 2</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 3</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 4</mat-option>
+                                                    <mat-option value="alert_level_1">Hold Transaction</mat-option>
+                                                    <mat-option value="alert_level_1">Decline transaction</mat-option>
+                                                </mat-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="segment-configuration-item">
+                                            <div class="segment-configuration-item-title">All transactions (STRUCT)
+                                                <div class="switcher">
+                                                    <div class="custom-control custom-switch"><input type="checkbox" id="switchSTRUCT3"
+                                                                                                     class="custom-control-input" checked><label
+                                                            for="switchSTRUCT3" class="custom-control-label">On</label></div>
+                                                </div>
+                                            </div>
+                                            <div class="segment-configuration-item-body">When <input type="text" formControlName="number" placeholder=""/>
+                                                transactions have been sent just below reporting threshold
+                                                , then apply
+                                                <mat-select formControlName="STRUCT3" style="width: 200px">
+                                                    <mat-option value="alert_level_1">Alert Level 1</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 2</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 3</mat-option>
+                                                    <mat-option value="alert_level_1">Alert Level 4</mat-option>
+                                                    <mat-option value="alert_level_1">Hold Transaction</mat-option>
+                                                    <mat-option value="alert_level_1">Decline transaction</mat-option>
+                                                </mat-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="segment-configuration-row">
+                            <div class="segment-configuration-row-title">
+                                Layering Network Monitoring (LYR)
+                                <span class="badge badge-secondary">2</span>
+                                <div class="add-configuration-button">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+</div>
