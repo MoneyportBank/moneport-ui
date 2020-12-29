@@ -1,0 +1,62 @@
+<div class="mat-content" flex mat-scroll-y>
+    <div class="row">
+        <div class="col-12">
+            <br>
+            <h1>Entities</h1>
+            <div class="separator mb-5"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12" style="margin-bottom: 20px">
+            <data-table id="films-grid"
+                        [items]="films"
+                        [itemCount]="filmCount"
+                        (reload)="reloadFilms($event)"
+                        [limit]="3"
+                        [sortBy]="'rating'"
+                        [sortAsc]="false"
+                        [selectColumn]="true"
+                        [multiSelect]="false"
+                        [substituteRows]="false"
+                        [expandableRows]="false"
+                        [translations]="translations"
+                        [indexColumnHeader]="'#'"
+                        [selectOnRowClick]="true"
+            >
+                <data-table-column
+                        [property]="'name'"
+                        [header]="'Name'"
+                        [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                        [property]="'country'"
+                        [header]="'Country'"
+                        [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                        [property]="'numAlerts'"
+                        [header]="'Num Alerts'"
+                        [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                        [property]="'alerts'"
+                        [header]="'Alerts'"
+                        [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                        [property]="'created'"
+                        [header]="'Created'"
+                        [sortable]="true">
+                </data-table-column>
+            </data-table>
+            <div style="margin-top: 10px">
+                <b>Selected:</b>
+                <span *ngIf="filmsTable.selectedRow == null"><i>No item selected</i></span>
+                <span [textContent]="filmsTable.selectedRow && filmsTable.selectedRow.item.title"></span>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+</div>

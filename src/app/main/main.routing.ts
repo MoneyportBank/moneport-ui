@@ -24,6 +24,8 @@ import {PermissionGuard} from '../services/security/authz/permission.guard';
 import {QuickAccessComponent} from '../quickAccess/quick-access.component';
 import {TransactionsMonitoringMainComponent} from '../transactionsMonitoring/main/transactions-monitoring-main.component';
 import {TransactionsMonitoringSegmentsComponent} from '../transactionsMonitoring/segments/transactions-monitoring-segments.component';
+import {TransactionsMonitoringAlertsComponent} from '../transactionsMonitoring/alerts/transactions-monitoring-alerts.component';
+import {TransactionsMonitoringEntitiesComponent} from '../transactionsMonitoring/entities/transactions-monitoring-entities.component';
 
 
 export const MainRoutes: Routes = [
@@ -40,6 +42,16 @@ export const MainRoutes: Routes = [
                 path: 'transactionsMonitoringSegments',
                 component: TransactionsMonitoringSegmentsComponent,
                 data: {title: 'Transactions Monitoring Segments'}
+            },
+            {
+                path: 'transactionsMonitoringAlerts',
+                component: TransactionsMonitoringAlertsComponent,
+                data: {title: 'Transactions Monitoring Alerts'}
+            },
+            {
+                path: 'transactionsMonitoringEntities',
+                component: TransactionsMonitoringEntitiesComponent,
+                data: {title: 'Transactions Monitoring Entities'}
             },
             {path: 'offices', loadChildren: './../offices/office.module#OfficeModule'},
             {path: 'employees', loadChildren: './../employees/employee.module#EmployeeModule'},

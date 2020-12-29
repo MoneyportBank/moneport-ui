@@ -152,12 +152,66 @@ h1 {
   color: #3a3a3a !important;
 }
 
+.btn {
+  border: 1px solid #ccc;
+  border-radius: 4px !important;
+  margin: 1px;
+}
+
 .row {
   margin-right: 0 !important;
   margin-left: 0 !important;
 }
 
-.segment-content {
+.data-table-box {
+  background: #fff;
+  margin-top: 15px;
+}
+
+.data-table-box .mat-tab-body-content {
+  padding: 15px 0 0 0;
+}
+
+.row-expansion {
+  background: #fffefa;
+}
+
+.transaction-badge {
+  background: #a2cdd5;
+  padding: 1px 5px;
+  border-radius: 3px;
+  display: block;
+  float: left;
+  color: #fff;
+  margin-right: 5px;
+}
+
+.column-ruleCode div, .column-numAlerts div, .code-rule, .column-alerts div {
+  background: #fdb721;
+  padding: 1px 4px;
+  color: #fff;
+  border-radius: 3px;
+  display: inline-block;
+  min-width: 54px;
+}
+
+.column-numAlerts div, .column-alerts div {
+  display: inline !important;
+}
+
+.column-subject div::before, .subject-badge::before {
+  content: 'Е';
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: #f07921;
+  display: block;
+  float: left;
+  color: #fff;
+  margin-right: 5px;
+}
+
+.column-selector-box {
+  background: #fff;
 }
 
 .segment-content-empty {

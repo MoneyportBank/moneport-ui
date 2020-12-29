@@ -24,6 +24,7 @@
         "styles.scss",
         "theme.scss",
         "../node_modules/@covalent/core/common/platform.css",
+        "./assets/css/vendor/bootstrap.glyphicons.min.css",
         "./assets/css/vendor/bootstrap.min.css",
         "./assets/css/vendor/bootstrap.rtl.only.min.css",
         "../node_modules/@glidejs/glide/dist/css/glide.core.min.css",

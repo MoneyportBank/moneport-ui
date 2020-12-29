@@ -1,0 +1,135 @@
+<div class="mat-content" flex mat-scroll-y>
+    <div class="row">
+        <div class="col-12">
+            <br>
+            <h1>Alerts</h1>
+            <div class="separator mb-5"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12" style="margin-bottom: 20px">
+            <data-table id="films-grid"
+                        [items]="films"
+                        [itemCount]="filmCount"
+                        (reload)="reloadFilms($event)"
+
+                        [limit]="3"
+                        [sortBy]="'rating'"
+                        [sortAsc]="false"
+
+                        [selectColumn]="true"
+                        [multiSelect]="false"
+                        [substituteRows]="false"
+                        [expandableRows]="true"
+                        [translations]="translations"
+                        [indexColumnHeader]="'#'"
+                        [selectOnRowClick]="true"
+            >
+                <ng-template #dataTableExpand let-item="item">
+                    <!--<div [textContent]="item.description" style="padding: 5px; color: gray"></div>-->
+                    <mat-tab-group>
+                        <mat-tab label="Transactions">
+                            <table style="width: 100%">
+                                <thead>
+                                    <th>Transaction ID</th>
+                                    <th>Time</th>
+                                    <th>Amounts</th>
+                                    <th>Alerts</th>
+                                    <th>Customer</th>
+                                    <th>Counterparty</th>
+                                    <th>Status</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="transaction-badge">Т</span>345345-345345-345345</td>
+                                        <td>2020-11-17 18:39:55</td>
+                                        <td>GBP 57.20</td>
+                                        <td><div class="code-rule">TVL-PB</div></td>
+                                        <td><div class="subject-badge">Todd Green</div></td>
+                                        <td><div class="subject-badge">Kaelyn Franklin</div></td>
+                                        <td>Active</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </mat-tab>
+                        <mat-tab label="Rule Info">
+                            <table>
+                                <tr>
+                                    <td><strong>Code:</strong></td>
+                                    <td>TVL-PB</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Name:</strong></td>
+                                    <td>Transaction Value Limit</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Description:</strong></td>
+                                    <td>Payment</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Summary:</strong></td>
+                                    <td>Transaction amount</td>
+                                </tr>
+                            </table>
+                        </mat-tab>
+                    </mat-tab-group>
+
+                </ng-template>
+                <data-table-column
+                        [property]="'id'"
+                        [header]="'Alert ID'"
+                        [sortable]="true"
+                >
+                </data-table-column>
+                <data-table-column
+                        [property]="'ruleCode'"
+                        [header]="'Rule Code'"
+                        [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                        [property]="'subject'"
+                        [header]="'Subject(s)'"
+                        [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                        [property]="'priorityAction'"
+                        [header]="'Priority action'"
+                        [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                        [property]="'numberOfTXs'"
+                        [header]="'Number Of TXs'"
+                        [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                        [property]="'createdAt'"
+                        [header]="'Created At'"
+                        [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                        [property]="'ageOfAlert'"
+                        [header]="'Age Of alert'"
+                        [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                        [property]="'status'"
+                        [header]="'Status'"
+                        [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                        [property]="'owner'"
+                        [header]="'Owner'"
+                        [sortable]="true">
+                </data-table-column>
+            </data-table>
+            <div style="margin-top: 10px">
+                <b>Selected:</b>
+                <span *ngIf="filmsTable.selectedRow == null"><i>No item selected</i></span>
+                <span [textContent]="filmsTable.selectedRow && filmsTable.selectedRow.item.title"></span>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+</div>

@@ -97,22 +97,22 @@
                             </a>
                             <hr>
                             <div class="caption">Monitoring Desk</div>
-                            <a mat-list-item [routerLink]="'/transactions-monitoring-alerts'" routerLinkActive="active"
+                            <a class="sub-item" mat-list-item [routerLink]="'/transactionsMonitoringAlerts'" routerLinkActive="active"
                                *hasPermission="{ id: 'teller_operations', accessLevel: 'READ' }">
                                 <i [ngClass]="'simple-icon-flag'"></i>
                                 {{'Alerts' | translate}}
                             </a>
-                            <a mat-list-item [routerLink]="'/transactions-monitoring-entities'" routerLinkActive="active"
+                            <a class="sub-item" mat-list-item [routerLink]="'/transactionsMonitoringEntities'" routerLinkActive="active"
                                *hasPermission="{ id: 'teller_operations', accessLevel: 'READ' }">
                                 <i [ngClass]="'simple-icon-list'"></i>
                                 {{'Entities' | translate}}
                             </a>
-                            <a mat-list-item [routerLink]="'/transactions-monitoring-transactions'" routerLinkActive="active"
+                            <a class="sub-item" mat-list-item [routerLink]="'/transactions-monitoring-transactions'" routerLinkActive="active"
                                *hasPermission="{ id: 'teller_operations', accessLevel: 'READ' }">
                                 <i [ngClass]="'simple-icon-shuffle'"></i>
                                 {{'Transactions' | translate}}
                             </a>
-                            <a mat-list-item [routerLink]="'/transactions-monitoring-cases'" routerLinkActive="active"
+                            <a class="sub-item" mat-list-item [routerLink]="'/transactions-monitoring-cases'" routerLinkActive="active"
                                *hasPermission="{ id: 'teller_operations', accessLevel: 'READ' }">
                                 <i [ngClass]="'simple-icon-puzzle'"></i>
                                 {{'Cases' | translate}}
@@ -124,7 +124,7 @@
                                 <i [ngClass]="'simple-icon-organization'"></i>
                                 {{'Segments' | translate}}
                             </a>
-                            <a mat-list-item [routerLink]="'/transactions-monitoring-users'" routerLinkActive="active"
+                            <a class="sub-item" mat-list-item [routerLink]="'/transactions-monitoring-users'" routerLinkActive="active"
                                *hasPermission="{ id: 'teller_operations', accessLevel: 'READ' }">
                                 <i [ngClass]="'simple-icon-people'"></i>
                                 {{'Users' | translate}}

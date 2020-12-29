@@ -16,7 +16,7 @@
                         <div class="row">
                             <div class="col-6">All transactions</div>
                             <div class="add-configuration-button col-6">
-                                <button type="button" class="btn btn-primary" (click)="showContent = true">
+                                <button type="button" class="btn btn-primary" (click)="show('AllTransactions')">
                                     <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
                                 </button>
                             </div>
@@ -29,7 +29,7 @@
                         <div class="row">
                             <div class="col-6">Medium Risk Customers</div>
                             <div class="add-configuration-button col-6">
-                                <button type="button" class="btn btn-primary">
+                                <button type="button" class="btn btn-primary" (click)="show('MediumRiskCustomers')">
                                     <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
                                 </button>
                             </div>
@@ -37,7 +37,7 @@
                         <div class="row">
                             <div class="col-6">High Risk Customers</div>
                             <div class="add-configuration-button col-6">
-                                <button type="button" class="btn btn-primary">
+                                <button type="button" class="btn btn-primary" (click)="show('HighRiskCustomers')">
                                     <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
                                 </button>
                             </div>
@@ -45,7 +45,7 @@
                         <div class="row">
                             <div class="col-6">Low Risk Customers</div>
                             <div class="add-configuration-button col-6">
-                                <button type="button" class="btn btn-primary">
+                                <button type="button" class="btn btn-primary" (click)="show('LowRiskCustomers')">
                                     <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
                                 </button>
                             </div>
@@ -58,7 +58,7 @@
                         <div class="row">
                             <div class="col-6">Non-UK</div>
                             <div class="add-configuration-button col-6">
-                                <button type="button" class="btn btn-primary">
+                                <button type="button" class="btn btn-primary" (click)="show('NonUK')">
                                     <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
                                 </button>
                             </div>
@@ -66,7 +66,7 @@
                         <div class="row">
                             <div class="col-6">UK</div>
                             <div class="add-configuration-button col-6">
-                                <button type="button" class="btn btn-primary">
+                                <button type="button" class="btn btn-primary" (click)="show('UK')">
                                     <span class="badge mb-1 mr-1 badge-outline-secondary badge-pill">Add Configuration</span>
                                 </button>
                             </div>
@@ -79,7 +79,9 @@
             <div class="panel card border" style="height: 100%;">
                 <div class="panel-body card-block card-body">
                     <div class="segment-content-empty" *ngIf="!showContent">Select a segment</div>
-                    <div class="segment-content" *ngIf="showContent">
+                    <div class="segment-content" *ngIf="showContent && showAllTransactions">
+                        <h3>All Transactions</h3>
+                        <hr>
                         <div class="segment-configuration-row">
                             <div class="segment-configuration-row-title">
                                 Large Balance (Inbound/Outbound) (LB)
