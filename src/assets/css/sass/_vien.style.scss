@@ -172,6 +172,56 @@ h1 {
   padding: 15px 0 0 0;
 }
 
+.transaction-item-table {
+  border: 1px solid #ccc;
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  margin-bottom: 15px;
+}
+
+.transaction-item-table .header-row{
+  background: #e7e8ee;
+}
+
+.transaction-item-table td {
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.transaction-item-table .item {
+  float: left;
+  margin-right: 20px;
+}
+
+.transaction-item-table .item-title {
+  color: #69696e;
+}
+
+.transaction-item-table .item-value {
+  font-weight: bold;
+}
+
+.transaction-item-table .status {
+  border: 2px solid #89878a;
+  border-radius: 3px;
+  color: #89878a;
+  padding: 0 3px;
+  text-transform: uppercase;
+}
+
+.transaction-item-table .transaction-number {
+  float: left;
+}
+
+.transaction-item-table .transaction-checkbox {
+  float: right;
+}
+
+.transaction-item-table .transaction-checkbox .custom-control-label::before {
+  background: #fff !important;
+}
+
 .row-expansion {
   background: #fffefa;
 }
@@ -186,7 +236,7 @@ h1 {
   margin-right: 5px;
 }
 
-.column-ruleCode div, .column-numAlerts div, .code-rule, .column-alerts div {
+.column-ruleCode div, .column-numAlerts div, .code-rule, .column-alerts div, .alert-block {
   background: #fdb721;
   padding: 1px 4px;
   color: #fff;

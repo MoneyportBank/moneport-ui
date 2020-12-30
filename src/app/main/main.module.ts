@@ -29,6 +29,7 @@ import {TransactionsMonitoringMainModule} from '../transactionsMonitoring/main/t
 import {TransactionsMonitoringSegmentsModule} from '../transactionsMonitoring/segments/transactions-monitoring-segments.module'
 import {TransactionsMonitoringAlertsModule} from '../transactionsMonitoring/alerts/transactions-monitoring-alerts.module'
 import {TransactionsMonitoringEntitiesModule} from '../transactionsMonitoring/entities/transactions-monitoring-entities.module'
+import {TransactionsMonitoringTransactionsModule} from '../transactionsMonitoring/transactions/transactions-monitoring-transactions.module'
 import {
   MatButtonModule,
   MatCardModule,
@@ -78,7 +79,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     TransactionsMonitoringMainModule,
     TransactionsMonitoringSegmentsModule,
     TransactionsMonitoringAlertsModule,
-    TransactionsMonitoringEntitiesModule
+    TransactionsMonitoringEntitiesModule,
+    TransactionsMonitoringTransactionsModule
   ],
   declarations: [
     MainComponent,
