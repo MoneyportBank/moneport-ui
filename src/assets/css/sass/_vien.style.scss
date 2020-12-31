@@ -155,7 +155,6 @@ h1 {
 .btn {
   border: 1px solid #ccc;
   border-radius: 4px !important;
-  margin: 1px;
 }
 
 .row {
@@ -220,6 +219,26 @@ h1 {
 
 .transaction-item-table .transaction-checkbox .custom-control-label::before {
   background: #fff !important;
+}
+
+.cases-table .delete-icon{
+  font-size: 16px;
+  display: inline-block;
+  margin-top: 3px;
+}
+
+.cases-table .case-state {
+  background: #fff;
+  border: 2px solid #89878a;
+  border-radius: 3px;
+  color: #89878a;
+  padding: 1px 4px;
+  text-transform: uppercase;
+}
+
+.cases-table .case-state.created {
+  border-color: #ee8b31;
+  color: #ee8b31;
 }
 
 .row-expansion {

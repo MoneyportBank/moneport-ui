@@ -27,6 +27,7 @@ import {TransactionsMonitoringSegmentsComponent} from '../transactionsMonitoring
 import {TransactionsMonitoringAlertsComponent} from '../transactionsMonitoring/alerts/transactions-monitoring-alerts.component';
 import {TransactionsMonitoringEntitiesComponent} from '../transactionsMonitoring/entities/transactions-monitoring-entities.component';
 import {TransactionsMonitoringTransactionsComponent} from '../transactionsMonitoring/transactions/transactions-monitoring-transactions.component';
+import {TransactionsMonitoringCasesComponent} from '../transactionsMonitoring/cases/transactions-monitoring-cases.component';
 
 
 export const MainRoutes: Routes = [
@@ -58,6 +59,11 @@ export const MainRoutes: Routes = [
                 path: 'transactionsMonitoringTransactions',
                 component: TransactionsMonitoringTransactionsComponent,
                 data: {title: 'Transactions Monitoring Transactions'}
+            },
+            {
+                path: 'transactionsMonitoringCases',
+                component: TransactionsMonitoringCasesComponent,
+                data: {title: 'Transactions Monitoring Cases'}
             },
             {path: 'offices', loadChildren: './../offices/office.module#OfficeModule'},
             {path: 'employees', loadChildren: './../employees/employee.module#EmployeeModule'},

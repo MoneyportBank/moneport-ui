@@ -1,0 +1,78 @@
+<div class="mat-content" flex mat-scroll-y>
+    <div class="row">
+        <div class="col-12">
+            <br>
+            <h1>Cases</h1>
+            <div class="separator mb-5"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 cases-table" style="margin-bottom: 20px">
+            <data-table id="films-grid"
+                        [items]="films"
+                        [itemCount]="filmCount"
+                        (reload)="reloadFilms($event)"
+                        [limit]="4"
+                        [sortBy]="'rating'"
+                        [sortAsc]="false"
+                        [selectColumn]="true"
+                        [multiSelect]="false"
+                        [substituteRows]="false"
+                        [expandableRows]="false"
+                        [translations]="translations"
+                        [indexColumnHeader]="'#'"
+                        [selectOnRowClick]="true"
+            >
+                <data-table-column
+                        [property]="'summary'"
+                        [header]="'Summary'"
+                        [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                        [property]="'created'"
+                        [header]="'Created'"
+                        [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                        [property]="'owner'"
+                        [header]="'Owner'"
+                        [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                        [property]="'description'"
+                        [header]="'Description'"
+                        [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                        [header]="'State'"
+                        [sortable]="true">
+                    <ng-template #dataTableCell let-item="item">
+                        <span class="case-state created">{{item.state}}</span>
+                    </ng-template>
+                </data-table-column>
+                <data-table-column
+                        [property]="'sarState'"
+                        [header]="'SAR State'"
+                        [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                        header="Delete">
+                    <ng-template #dataTableHeader let-item="item">
+                        <i>Delete</i>
+                    </ng-template>
+                    <ng-template #dataTableCell let-item="item">
+                        <button (click)="caseClicked(item)" class="btn btn-sm btn-danger"><span class="delete-icon glyph-icon simple-icon-trash"></span></button>
+                    </ng-template>
+                </data-table-column>
+            </data-table>
+            <div style="margin-top: 10px">
+                <b>Selected:</b>
+                <span *ngIf="filmsTable.selectedRow == null"><i>No item selected</i></span>
+                <span [textContent]="filmsTable.selectedRow && filmsTable.selectedRow.item.title"></span>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+</div>
