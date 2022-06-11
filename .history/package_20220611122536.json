@@ -66,7 +66,9 @@
     "perfect-scrollbar": "^0.8.1",
     "reselect": "2.5.4",
     "rxjs": "^5.6.0-forward-compat.5",
+    "showdown": "1.6.4",
     "text-mask-addons": "^3.8.0",
+    "video.js": "^7.8.3",
     "zone.js": "0.8.17"
   },
   "devDependencies": {
