@@ -17,7 +17,7 @@
  * under the License.
  */
 import {Component, OnDestroy} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import {Observable, Subscription} from 'rxjs';
 import {TableData} from '../../common/data-table/data-table.component';
 import * as fromAccounting from '../store/index';
 import {AccountingStore} from '../store/index';
@@ -26,7 +26,6 @@ import {FetchRequest} from '../../services/domain/paging/fetch-request.model';
 import {PayrollCollectionHistory} from '../../services/payroll/domain/payroll-collection-history.model';
 import {SelectAction} from '../store/payroll/payroll-collection.actions';
 import {ActivatedRoute} from '@angular/router';
-import {Subscription} from 'rxjs/Subscription';
 
 @Component({
   templateUrl: './payments.list.component.html'

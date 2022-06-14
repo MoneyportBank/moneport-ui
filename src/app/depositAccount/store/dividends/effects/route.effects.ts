@@ -18,7 +18,7 @@
  */
 import * as dividendActions from '../dividend.actions';
 import {Action} from '@ngrx/store';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {Actions, Effect} from '@ngrx/effects';
 import {Router} from '@angular/router';
 import {Injectable} from '@angular/core';

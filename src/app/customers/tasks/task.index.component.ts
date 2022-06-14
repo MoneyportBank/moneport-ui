@@ -20,7 +20,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {SelectAction} from '../store/tasks/task.actions';
 import {CustomersStore} from '../store/index';
 import {ActivatedRoute} from '@angular/router';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 
 @Component({
   templateUrl: './task.index.component.html'

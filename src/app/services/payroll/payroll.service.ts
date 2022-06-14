@@ -20,7 +20,7 @@ import {Inject, Injectable} from '@angular/core';
 import {RequestOptionsArgs} from '@angular/http';
 import {buildSearchParams} from '../domain/paging/search-param.builder';
 import {PayrollPaymentPage} from './domain/payroll-payment-page.model';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {FetchRequest} from '../domain/paging/fetch-request.model';
 import {PayrollCollectionHistory} from './domain/payroll-collection-history.model';
 import {PayrollCollectionSheet} from './domain/payroll-collection-sheet.model';

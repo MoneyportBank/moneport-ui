@@ -26,7 +26,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {CovalentStepsModule} from '@covalent/core';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {AccountingService} from '../../../services/accounting/accounting.service';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {By} from '@angular/platform-browser';
 import {MatAutocompleteModule, MatCardModule, MatInputModule, MatOptionModule} from '@angular/material';
 import {TransactionTypeSelectComponent} from './transaction-type-select/transaction-type-select.component';

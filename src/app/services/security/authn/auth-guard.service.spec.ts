@@ -19,7 +19,7 @@
 import {AuthGuard} from './auth-guard.service';
 import {ActivatedRouteSnapshot, Router, RouterStateSnapshot} from '@angular/router';
 import {inject, TestBed} from '@angular/core/testing';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {Store} from '@ngrx/store';
 import * as fromRoot from '../../../store';
 

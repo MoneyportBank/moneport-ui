@@ -23,11 +23,11 @@ import { Action, HttpClient } from '../services/http/http.service';
 import { Store } from '@ngrx/store';
 import * as fromRoot from '../store';
 import { LOGOUT } from '../store/security/security.actions';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { FimsPermission } from '../services/security/authz/fims-permission.model';
 import { CountryService } from '../services/country/country.service';
 import { TdMediaService } from '@covalent/core';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 import { MatSidenav } from '@angular/material';
 
 interface MenuItem {

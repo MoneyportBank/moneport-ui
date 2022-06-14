@@ -18,7 +18,7 @@
  */
 import {Injectable} from '@angular/core';
 import {Actions, Effect} from '@ngrx/effects';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {Action} from '@ngrx/store';
 import * as securityActions from '../security.actions';
 import {LoginSuccessAction} from '../security.actions';

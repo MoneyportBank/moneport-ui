@@ -19,7 +19,7 @@
 import {Injectable} from '@angular/core';
 import {PortfolioService} from '../../../../../../services/portfolio/portfolio.service';
 import {CustomerService} from '../../../../../../services/customer/customer.service';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {CustomerDocument} from '../../../../../../services/customer/domain/customer-document.model';
 import {CaseCustomerDocuments} from '../../../../../../services/portfolio/domain/case-customer-documents.model';
 

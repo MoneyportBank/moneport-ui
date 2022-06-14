@@ -19,7 +19,7 @@
 import {Component} from '@angular/core';
 import {AccountingService} from '../../services/accounting/accounting.service';
 import {FinancialCondition} from '../../services/accounting/domain/financial-condition.model';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {FinancialConditionSection} from '../../services/accounting/domain/financial-condition-section.model';
 
 @Component({

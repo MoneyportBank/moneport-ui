@@ -28,7 +28,7 @@ import { Customer } from '../../services/customer/domain/customer.model';
 import { TranslateModule } from '@ngx-translate/core';
 import { CustomerEmployeesComponent } from './employees/employees.component';
 import { CustomerOfficesComponent } from './offices/offices.component';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { CustomersStore } from '../store/index';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';

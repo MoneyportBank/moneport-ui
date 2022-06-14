@@ -19,9 +19,8 @@
 import {Actions, Effect} from '@ngrx/effects';
 import {Injectable} from '@angular/core';
 import {Action} from '@ngrx/store';
-import {Observable} from 'rxjs/Observable';
+import {Observable, of} from 'rxjs';
 import * as taskActions from '../task.actions';
-import {of} from 'rxjs/observable/of';
 import {PortfolioService} from '../../../../../services/portfolio/portfolio.service';
 import {TaskInstance} from '../../../../../services/portfolio/domain/task-instance.model';
 import {TaskDefinition} from '../../../../../services/portfolio/domain/task-definition.model';

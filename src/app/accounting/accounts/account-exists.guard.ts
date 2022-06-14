@@ -19,8 +19,7 @@
 import {ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot} from '@angular/router';
 import {Injectable} from '@angular/core';
 import * as fromAccounting from '../store';
-import {Observable} from 'rxjs/Observable';
-import {of} from 'rxjs/observable/of';
+import {Observable, of} from 'rxjs';
 import {AccountingService} from '../../services/accounting/accounting.service';
 import {LoadAction} from '../store/account/account.actions';
 import {AccountingStore} from '../store/index';

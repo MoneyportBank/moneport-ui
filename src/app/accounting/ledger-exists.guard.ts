@@ -20,9 +20,8 @@ import {Store} from '@ngrx/store';
 import {ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot} from '@angular/router';
 import {Injectable} from '@angular/core';
 import * as fromAccounting from './store';
-import {Observable} from 'rxjs/Observable';
+import {Observable, of} from 'rxjs';
 import {LoadAction} from './store/ledger/ledger.actions';
-import {of} from 'rxjs/observable/of';
 import {AccountingService} from '../services/accounting/accounting.service';
 import {ExistsGuardService} from '../common/guards/exists-guard';
 

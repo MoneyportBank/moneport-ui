@@ -25,7 +25,7 @@ import * as fromRoot from '../../../store';
 import {CREATE, RESET_FORM} from '../../store/ledger/journal-entry/journal-entry.actions';
 import {Error} from '../../../services/domain/error.model';
 import {AccountingStore} from '../../store/index';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {todayAsISOString} from '../../../services/domain/date.converter';
 
 @Component({

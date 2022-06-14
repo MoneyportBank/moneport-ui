@@ -21,7 +21,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {TdStepComponent} from '@covalent/core';
 import {ProductInstance} from '../../../services/depositAccount/domain/instance/product-instance.model';
 import {ProductDefinition} from '../../../services/depositAccount/domain/definition/product-definition.model';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {CustomerService} from '../../../services/customer/customer.service';
 
 @Component({

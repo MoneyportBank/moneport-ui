@@ -22,9 +22,9 @@ import {PortfolioService} from '../../../services/portfolio/portfolio.service';
 import {ExistsGuardService} from '../../../common/guards/exists-guard';
 import * as fromPortfolio from '../store/index';
 import {PortfolioStore} from '../store/index';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {LoadAction} from '../store/lossProvision/loss-provision.actions';
-import {of} from 'rxjs/observable/of';
+import {of} from 'rxjs';
 
 @Injectable()
 export class LoanLossProvisionExistsGuard implements CanActivate {

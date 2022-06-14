@@ -1,3 +1,5 @@
+
+import {throwError as observableThrowError} from 'rxjs';
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -16,7 +18,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {ErrorObservable} from 'rxjs/observable/ErrorObservable';
 
 export class Error {
@@ -29,7 +31,7 @@ export class Error {
 
     console.error(error.getErrorMessage());
 
-    return Observable.throw(error);
+    return observableThrowError(error);
   }
 
   constructor(status: number, statusText: string, message: string) {

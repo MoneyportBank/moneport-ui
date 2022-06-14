@@ -31,7 +31,7 @@ import {typeOptionList} from '../domain/type-option-list.model';
 import {accountExists} from '../../common/validator/account-exists.validator';
 import {AccountingService} from '../../services/accounting/accounting.service';
 import {ledgerExists} from '../../common/validator/ledger-exists.validator';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import {Type} from '../../services/depositAccount/domain/type.model';
 
 @Component({

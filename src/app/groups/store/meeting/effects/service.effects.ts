@@ -18,9 +18,9 @@
  */
 import { Injectable } from '@angular/core';
 import { Actions, Effect, toPayload } from '@ngrx/effects';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Action } from '@ngrx/store';
-import { of } from 'rxjs/observable/of';
+import { of } from 'rxjs';
 import * as meetingActions from '../meeting.actions';
 import { GroupService } from '../../../../services/group/group.service';
 

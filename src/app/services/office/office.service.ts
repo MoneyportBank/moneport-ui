@@ -17,7 +17,7 @@
  * under the License.
  */
 import {Inject, Injectable} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {HttpClient} from '../http/http.service';
 import {Error} from '../domain/error.model';
 import {RequestOptionsArgs, URLSearchParams} from '@angular/http';

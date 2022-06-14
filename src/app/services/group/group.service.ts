@@ -18,7 +18,7 @@
  */
 
 import { Inject, Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Group } from './domain/group.model';
 import { HttpClient } from '../http/http.service';
 import { GroupPage } from './domain/group-page.model';

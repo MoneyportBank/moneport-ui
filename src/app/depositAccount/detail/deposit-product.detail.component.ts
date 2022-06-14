@@ -18,14 +18,14 @@
  */
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ProductDefinition} from '../../services/depositAccount/domain/definition/product-definition.model';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import {ActivatedRoute, Router} from '@angular/router';
 import {DepositAccountStore} from '../store/index';
 import * as fromDepositAccounts from './../store';
 import * as fromRoot from '../../store';
 import {TableData} from '../../common/data-table/data-table.component';
 import {TdDialogService} from '@covalent/core';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {DELETE, EXECUTE_COMMAND} from '../store/product.actions';
 import {FimsPermission} from '../../services/security/authz/fims-permission.model';
 

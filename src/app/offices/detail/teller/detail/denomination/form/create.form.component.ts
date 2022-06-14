@@ -22,7 +22,7 @@ import * as fromOffices from '../../../../../store/index';
 import {OfficesStore} from '../../../../../store/index';
 import {TellerDenomination} from '../../../../../../services/teller/domain/teller-denomination.model';
 import {CREATE_DENOMINATION} from '../../../../../store/teller/denomination/denomination.actions';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {TellerService} from '../../../../../../services/teller/teller-service';
 import {TellerBalanceSheet} from '../../../../../../services/teller/domain/teller-balance-sheet.model';
 

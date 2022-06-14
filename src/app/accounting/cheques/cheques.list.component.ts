@@ -17,7 +17,7 @@
  * under the License.
  */
 import {Component, OnInit} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {ITdDataTableColumn, TdDialogService} from '@covalent/core';
 import {AccountingStore} from '../store/index';
 import * as fromAccounting from '../store';

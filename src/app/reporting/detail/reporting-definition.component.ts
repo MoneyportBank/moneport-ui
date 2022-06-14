@@ -18,7 +18,7 @@
  */
 
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {ReportDefinition} from '../../services/reporting/domain/report-definition.model';
 import {ActivatedRoute} from '@angular/router';
 import {ReportingService} from '../../services/reporting/reporting.service';

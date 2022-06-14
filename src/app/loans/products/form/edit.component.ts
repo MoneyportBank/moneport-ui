@@ -21,12 +21,12 @@ import {Product} from '../../../services/portfolio/domain/product.model';
 import {ActivatedRoute, Router} from '@angular/router';
 import {PortfolioStore} from '../store/index';
 import {RESET_FORM, UPDATE} from '../store/product.actions';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import * as fromPortfolio from '../store';
 import {FimsProduct} from '../store/model/fims-product.model';
 import {Currency} from '../../../services/currency/domain/currency.model';
 import {CurrencyService} from '../../../services/currency/currency.service';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 
 @Component({
   templateUrl: './edit.component.html'

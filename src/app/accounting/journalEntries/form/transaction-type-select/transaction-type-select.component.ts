@@ -18,7 +18,7 @@
  */
 
 import {Component, forwardRef, Input, OnInit} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {TransactionType} from '../../../../services/accounting/domain/transaction-type.model';
 import {AccountingService} from '../../../../services/accounting/accounting.service';

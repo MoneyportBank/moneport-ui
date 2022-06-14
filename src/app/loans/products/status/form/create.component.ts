@@ -20,7 +20,7 @@ import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {TaskDefinition} from '../../../../services/portfolio/domain/task-definition.model';
 import {ProductTaskFormComponent} from './form.component';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import {PortfolioStore} from '../../store/index';
 import * as fromPortfolio from '../../store';
 import {CREATE, RESET_FORM} from '../../store/tasks/task.actions';

@@ -24,8 +24,8 @@ import {ITdDataTableColumn} from '@covalent/core';
 import {ActionOption, ActionOptions} from '../../../common/domain/action-option.model';
 import {PortfolioStore} from '../store/index';
 import * as fromPortfolio from '../store';
-import {Observable} from 'rxjs/Observable';
-import {Subscription} from 'rxjs/Subscription';
+import {Observable} from 'rxjs';
+import {Subscription} from 'rxjs';
 import {LOAD_ALL} from '../store/charges/charge.actions';
 import {FimsProduct} from '../store/model/fims-product.model';
 

@@ -22,9 +22,9 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {FimsValidators} from '../../../common/validator/validators';
 import {Attendee} from '../../../services/group/domain/attendee.model';
 import {Customer} from '../../../services/customer/domain/customer.model';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import * as fromGroups from '../../store';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import {TdStepComponent} from '@covalent/core';
 import {StatusOptionList} from './domain/status-option-list.model';
 import {SignOffMeeting} from '../../../services/group/domain/signoff-meeting.model'

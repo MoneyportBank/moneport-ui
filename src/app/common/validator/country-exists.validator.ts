@@ -18,7 +18,7 @@
  */
 import {CountryService} from '../../services/country/country.service';
 import {AbstractControl, AsyncValidatorFn} from '@angular/forms';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 
 export function countryExists(countryService: CountryService): AsyncValidatorFn {
   return (control: AbstractControl): Observable<any> => {

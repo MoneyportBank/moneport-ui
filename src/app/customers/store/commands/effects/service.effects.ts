@@ -18,9 +18,8 @@
  */
 import {Injectable} from '@angular/core';
 import {Actions, Effect, toPayload} from '@ngrx/effects';
-import {Observable} from 'rxjs/Observable';
+import {Observable, of} from 'rxjs';
 import {Action} from '@ngrx/store';
-import {of} from 'rxjs/observable/of';
 import * as commandActions from '../commands.actions';
 import {CustomerService} from '../../../../services/customer/customer.service';
 

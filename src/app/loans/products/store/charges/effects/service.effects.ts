@@ -18,9 +18,9 @@
  */
 import {Injectable} from '@angular/core';
 import {Actions, Effect} from '@ngrx/effects';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {Action} from '@ngrx/store';
-import {of} from 'rxjs/observable/of';
+import {of} from 'rxjs';
 import * as chargeActions from '../charge.actions';
 import {PortfolioService} from '../../../../../services/portfolio/portfolio.service';
 

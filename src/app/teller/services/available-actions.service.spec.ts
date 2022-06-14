@@ -18,7 +18,7 @@
  */
 import {AvailableActionService} from './available-actions.service';
 import {DepositAccountService} from '../../services/depositAccount/deposit-account.service';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {PortfolioService} from '../../services/portfolio/portfolio.service';
 import {fakeAsync, TestBed, tick} from '@angular/core/testing';
 import {AvailableTransactionType} from '../../services/depositAccount/domain/instance/available-transaction-type.model';

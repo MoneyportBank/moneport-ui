@@ -21,8 +21,8 @@ import {TaskDefinition} from '../../../services/portfolio/domain/task-definition
 import {ActivatedRoute, Router} from '@angular/router';
 import {TableData, TableFetchRequest} from '../../../common/data-table/data-table.component';
 import {PortfolioStore} from '../store/index';
-import {Observable} from 'rxjs/Observable';
-import {Subscription} from 'rxjs/Subscription';
+import {Observable} from 'rxjs';
+import {Subscription} from 'rxjs';
 import * as fromPortfolio from '../store';
 import {LOAD_ALL} from '../store/tasks/task.actions';
 import {FimsProduct} from '../store/model/fims-product.model';

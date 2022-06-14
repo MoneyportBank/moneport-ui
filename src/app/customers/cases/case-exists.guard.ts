@@ -19,8 +19,7 @@
 import {ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot} from '@angular/router';
 import {Injectable} from '@angular/core';
 import * as fromCases from './store';
-import {Observable} from 'rxjs/Observable';
-import {of} from 'rxjs/observable/of';
+import {Observable, of} from 'rxjs';
 import {CasesStore} from './store/index';
 import {PortfolioService} from '../../services/portfolio/portfolio.service';
 import {LoadAction} from './store/case.actions';

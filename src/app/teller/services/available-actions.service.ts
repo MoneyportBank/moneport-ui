@@ -18,7 +18,7 @@
  */
 import {Injectable} from '@angular/core';
 import {DepositAccountService} from '../../services/depositAccount/deposit-account.service';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {TransactionType} from '../../services/teller/domain/teller-transaction.model';
 import {PortfolioService} from '../../services/portfolio/portfolio.service';
 import {FetchRequest} from '../../services/domain/paging/fetch-request.model';

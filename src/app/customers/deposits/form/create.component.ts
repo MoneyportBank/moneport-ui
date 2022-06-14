@@ -25,7 +25,7 @@ import {DepositsStore} from '../store/index';
 import {CREATE} from '../store/deposit.actions';
 import * as fromCustomers from '../../store/index';
 import {DepositAccountService} from '../../../services/depositAccount/deposit-account.service';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {ProductDefinition} from '../../../services/depositAccount/domain/definition/product-definition.model';
 
 @Component({

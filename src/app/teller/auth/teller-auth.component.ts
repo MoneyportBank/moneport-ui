@@ -21,9 +21,9 @@ import * as fromTeller from '../store/index';
 import {TellerStore} from '../store/index';
 import * as fromRoot from '../../store/index';
 import {UNLOCK_DRAWER} from '../store/teller.actions';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 
 @Component({
   templateUrl: './teller-auth.component.html'

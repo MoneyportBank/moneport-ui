@@ -19,7 +19,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {SelectAction} from '../store/ledger/ledger.actions';
 import {AccountingStore} from '../store/index';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({

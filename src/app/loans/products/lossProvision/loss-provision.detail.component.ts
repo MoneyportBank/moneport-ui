@@ -19,7 +19,7 @@
 import {Component} from '@angular/core';
 import * as fromPortfolio from '../store/index';
 import {PortfolioStore} from '../store/index';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {TableData} from '../../../common/data-table/data-table.component';
 
 @Component({

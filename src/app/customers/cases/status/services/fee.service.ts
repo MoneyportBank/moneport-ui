@@ -17,7 +17,7 @@
  * under the License.
  */
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {PortfolioService} from '../../../../services/portfolio/portfolio.service';
 import {Payment} from '../../../../services/portfolio/domain/payment.model';
 import {ChargeDefinition} from '../../../../services/portfolio/domain/charge-definition.model';

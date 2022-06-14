@@ -18,10 +18,9 @@
  */
 import {Injectable} from '@angular/core';
 import {Actions, Effect} from '@ngrx/effects';
-import {Observable} from 'rxjs/Observable';
+import {Observable, of} from 'rxjs';
 import * as payrollActions from '../payroll.actions';
 import {Action} from '@ngrx/store';
-import {of} from 'rxjs/observable/of';
 import {PayrollService} from '../../../../services/payroll/payroll.service';
 
 @Injectable()

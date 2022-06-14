@@ -18,9 +18,8 @@
  */
 import {Inject, Injectable} from '@angular/core';
 import {Actions, Effect} from '@ngrx/effects';
-import {Observable} from 'rxjs/Observable';
+import {Observable, of} from 'rxjs';
 import {Action, Store} from '@ngrx/store';
-import {of} from 'rxjs/observable/of';
 import * as securityActions from '../security.actions';
 import {AuthenticationService} from '../../../services/security/authn/authentication.service';
 import {PermissionId} from '../../../services/security/authz/permission-id.type';

@@ -18,7 +18,7 @@
  */
 import {Component} from '@angular/core';
 import {Catalog} from '../../services/catalog/domain/catalog.model';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {CustomersStore} from '../store/index';
 import * as fromCustomers from '../store';
 import {TableData} from '../../common/data-table/data-table.component';

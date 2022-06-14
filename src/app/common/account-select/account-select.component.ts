@@ -18,7 +18,7 @@
  */
 import {Component, forwardRef, Input, OnInit} from '@angular/core';
 import {FetchRequest} from '../../services/domain/paging/fetch-request.model';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {AccountingService} from '../../services/accounting/accounting.service';
 import {Account} from '../../services/accounting/domain/account.model';
 import {AccountPage} from '../../services/accounting/domain/account-page.model';

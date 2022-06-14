@@ -19,7 +19,7 @@
 import {Injectable} from '@angular/core';
 import {Actions, Effect} from '@ngrx/effects';
 import {Router} from '@angular/router';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import * as instanceActions from '../deposit.actions';
 import {Action} from '@ngrx/store';
 

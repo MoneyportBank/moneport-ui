@@ -19,9 +19,9 @@
 import {DepositAccountService} from '../../../../services/depositAccount/deposit-account.service';
 import {Actions, Effect} from '@ngrx/effects';
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {Action} from '@ngrx/store';
-import {of} from 'rxjs/observable/of';
+import {of} from 'rxjs';
 import * as dividendActions from '../dividend.actions';
 
 @Injectable()

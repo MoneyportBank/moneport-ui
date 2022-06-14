@@ -19,9 +19,8 @@
 import {Injectable} from '@angular/core';
 import {OfficeService} from '../../../services/office/office.service';
 import {Actions, Effect} from '@ngrx/effects';
-import {Observable} from 'rxjs/Observable';
+import {Observable, of} from 'rxjs';
 import {Action} from '@ngrx/store';
-import {of} from 'rxjs/observable/of';
 import * as officeActions from '../office.actions';
 import {emptySearchResult} from '../../../common/store/search.reducer';
 

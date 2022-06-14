@@ -17,5 +17,8 @@
     "types": [
       "jasmine", "hammerjs"
     ]
+  },
+  "angularCompilerOptions":{
+    "preserveWhitespaces":"off"
   }
 }

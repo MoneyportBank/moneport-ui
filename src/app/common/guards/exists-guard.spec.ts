@@ -19,7 +19,7 @@
 import {Router} from '@angular/router';
 import {ExistsGuardService} from './exists-guard';
 import {fakeAsync, inject, TestBed, tick} from '@angular/core/testing';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 
 describe('Test Exists Guard Service', () => {
 

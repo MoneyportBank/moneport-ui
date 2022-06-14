@@ -18,7 +18,7 @@
  */
 import {Injectable} from '@angular/core';
 import {ActivatedRouteSnapshot, CanActivateChild, Router, RouterStateSnapshot} from '@angular/router';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {FimsPermission} from './fims-permission.model';
 import {Store} from '@ngrx/store';
 import * as fromRoot from '../../../store';

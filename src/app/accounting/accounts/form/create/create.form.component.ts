@@ -23,7 +23,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {Ledger} from '../../../../services/accounting/domain/ledger.model';
 import * as fromAccounting from '../../../store';
 import {Store} from '@ngrx/store';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import {Error} from '../../../../services/domain/error.model';
 import {CREATE, RESET_FORM} from '../../../store/account/account.actions';
 

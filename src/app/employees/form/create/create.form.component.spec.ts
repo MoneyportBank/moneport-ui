@@ -22,7 +22,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {CovalentStepsModule} from '@covalent/core';
 import {EmployeeFormComponent, EmployeeSaveEvent} from '../form.component';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {CreateEmployeeFormComponent} from './create.form.component';
 import {mapEmployee, mapUser} from '../form.mapper';
 import {EmployeesStore} from '../../store/index';

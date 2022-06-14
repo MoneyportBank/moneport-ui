@@ -21,7 +21,7 @@ import {DepositAccountStore} from '../../../store/index';
 import {CREATE} from '../../../store/dividends/dividend.actions';
 import * as fromDepositAccounts from './../../../store';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {DistributeDividendFormData} from './form.component';
 
 @Component({

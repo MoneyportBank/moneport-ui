@@ -17,13 +17,12 @@
  * under the License.
  */
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import {Observable, Subscription} from 'rxjs';
 import {TableData} from '../../../common/data-table/data-table.component';
 import {CasesStore} from '../store/index';
 import * as fromCases from '../store';
 import {LoadAllAction} from '../store/documents/document.actions';
 import {CaseSelection} from '../store/model/case-selection.model';
-import {Subscription} from 'rxjs/Subscription';
 import {CustomerDocument} from '../../../services/customer/domain/customer-document.model';
 import {ActivatedRoute, Router} from '@angular/router';
 import {DatePipe} from '@angular/common';

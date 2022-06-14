@@ -29,8 +29,8 @@ import {
   ResponseOptions
 } from '@angular/http';
 import {Store} from '@ngrx/store';
-import {Observable} from 'rxjs/Observable';
-import {ReflectiveInjector} from '@angular/core';
+import {Observable} from 'rxjs';
+import {Injector} from '@angular/core';
 
 describe('Test http client', () => {
 
@@ -57,7 +57,7 @@ describe('Test http client', () => {
   describe('Test http header', () => {
 
     beforeEach(() => {
-      this.injector = ReflectiveInjector.resolveAndCreate([
+      this.injector = Injector.resolveAndCreate([
         {provide: ConnectionBackend, useClass: MockBackend},
         {provide: RequestOptions, useClass: BaseRequestOptions},
         {

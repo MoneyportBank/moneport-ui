@@ -20,7 +20,7 @@ import {Component, OnInit} from '@angular/core';
 import * as fromOffices from '../../../store/index';
 import {OfficesStore} from '../../../store/index';
 import {Teller} from '../../../../services/teller/domain/teller.model';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 
 @Component({
   templateUrl: './teller.detail.component.html'

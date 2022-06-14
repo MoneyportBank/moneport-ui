@@ -17,7 +17,7 @@
  * under the License.
  */
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {Employee} from '../../../services/office/domain/employee.model';
 import {FetchRequest} from '../../../services/domain/paging/fetch-request.model';
 import * as fromRoot from '../../../store';

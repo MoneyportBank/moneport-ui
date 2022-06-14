@@ -21,7 +21,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {TableData} from '../common/data-table/data-table.component';
 import {FetchRequest} from '../services/domain/paging/fetch-request.model';
 import * as fromDepositAccounts from './store';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {SEARCH} from './store/product.actions';
 import {DepositAccountStore} from './store/index';
 import {ProductDefinition} from '../services/depositAccount/domain/definition/product-definition.model';

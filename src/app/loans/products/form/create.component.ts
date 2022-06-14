@@ -26,7 +26,7 @@ import {Error} from '../../../services/domain/error.model';
 import {FimsProduct} from '../store/model/fims-product.model';
 import {Currency} from '../../../services/currency/domain/currency.model';
 import {CurrencyService} from '../../../services/currency/currency.service';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 
 @Component({
   templateUrl: './create.component.html'

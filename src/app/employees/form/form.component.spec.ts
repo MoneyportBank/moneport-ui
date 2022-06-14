@@ -24,7 +24,7 @@ import {User} from '../../services/identity/domain/user.model';
 import {TranslateModule} from '@ngx-translate/core';
 import {ReactiveFormsModule} from '@angular/forms';
 import {CovalentStepsModule} from '@covalent/core';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {Store} from '@ngrx/store';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {FimsSharedModule} from '../../common/common.module';

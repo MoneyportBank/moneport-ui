@@ -20,7 +20,7 @@ import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {DepositAccountStore} from '../store/index';
 import {CREATE, RESET_FORM} from '../store/product.actions';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import * as fromDepositAccount from '../store';
 import {Error} from '../../services/domain/error.model';
 import {ProductDefinition} from '../../services/depositAccount/domain/definition/product-definition.model';
@@ -29,7 +29,7 @@ import {CurrencyService} from '../../services/currency/currency.service';
 import {DepositAccountService} from '../../services/depositAccount/deposit-account.service';
 import {Currency} from '../../services/currency/domain/currency.model';
 import {Action} from '../../services/depositAccount/domain/definition/action.model';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 
 @Component({
   templateUrl: './create.component.html'

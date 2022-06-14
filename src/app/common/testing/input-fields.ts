@@ -17,7 +17,7 @@
  * under the License.
  */
 import {ComponentFixture} from '@angular/core/testing';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {By} from '@angular/platform-browser';
 import {DebugElement} from '@angular/core';
 

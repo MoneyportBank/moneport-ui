@@ -19,8 +19,7 @@
 import {ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot} from '@angular/router';
 import {Injectable} from '@angular/core';
 import * as fromDeposits from './store';
-import {Observable} from 'rxjs/Observable';
-import {of} from 'rxjs/observable/of';
+import {Observable, of} from 'rxjs';
 import {DepositsStore} from './store/index';
 import {DepositAccountService} from '../../services/depositAccount/deposit-account.service';
 import {ExistsGuardService} from '../../common/guards/exists-guard';

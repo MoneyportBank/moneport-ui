@@ -27,7 +27,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { GroupEmployeesComponent } from './employees/employees.component';
 import { GroupOfficesComponent } from './offices/offices.component';
 import { GroupCustomersComponent } from './customers/customers.component';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { GroupsStore } from '../store/index';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';

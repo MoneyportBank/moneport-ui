@@ -17,13 +17,12 @@
  * under the License.
  */
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription, Observable} from 'rxjs';
 import {Ledger} from '../../services/accounting/domain/ledger.model';
 import {TableData} from '../../common/data-table/data-table.component';
 import {AccountingStore} from '../store/index';
 import {ActivatedRoute, Router} from '@angular/router';
 import * as fromAccounting from '../store';
-import {Observable} from 'rxjs/Observable';
 import {DELETE} from '../store/ledger/ledger.actions';
 import {TranslateService} from '@ngx-translate/core';
 import {TdDialogService} from '@covalent/core';

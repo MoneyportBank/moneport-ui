@@ -20,7 +20,7 @@ import {Directive, Input, OnDestroy, OnInit, TemplateRef, ViewContainerRef} from
 import {FimsPermission} from './fims-permission.model';
 import {Store} from '@ngrx/store';
 import * as fromRoot from '../../../store';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 
 @Directive({
   // tslint:disable-next-line:directive-selector

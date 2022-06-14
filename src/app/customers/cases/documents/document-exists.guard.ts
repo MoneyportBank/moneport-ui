@@ -1,3 +1,5 @@
+
+import {throwError as observableThrowError, Observable, of} from 'rxjs';
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -21,10 +23,8 @@ import {ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot} from '@angular
 import {CasesStore} from '../store/index';
 import {ExistsGuardService} from '../../../common/guards/exists-guard';
 import {PortfolioService} from '../../../services/portfolio/portfolio.service';
-import {Observable} from 'rxjs/Observable';
 import * as fromCases from '../store';
 import {LoadAction} from '../store/documents/document.actions';
-import {of} from 'rxjs/observable/of';
 import {CustomerService} from '../../../services/customer/customer.service';
 import {CaseCustomerDocuments, Document} from '../../../services/portfolio/domain/case-customer-documents.model';
 import {CustomerDocument} from '../../../services/customer/domain/customer-document.model';
@@ -61,7 +61,7 @@ export class DocumentExistsGuard implements CanActivate {
     const foundDocument = documents.find(document => document.documentId === documentId);
 
     if (!foundDocument) {
-      return Observable.throw(new Error('Document not found'));
+      return observableThrowError(new Error('Document not found'));
     }
 
     return Observable.of(foundDocument);

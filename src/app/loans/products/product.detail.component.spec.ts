@@ -28,7 +28,7 @@ import {FimsProduct} from './store/model/fims-product.model';
 import {FimsPermission} from '../../services/security/authz/fims-permission.model';
 import * as fromPortfolio from './store';
 import * as fromRoot from '../../store';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {By} from '@angular/platform-browser';
 import {FimsPermissionStubDirective} from '../../common/testing/permission-stubs';
 import {MatDialogModule} from '@angular/material';

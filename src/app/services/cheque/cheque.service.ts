@@ -18,7 +18,7 @@
  */
 import {Inject, Injectable} from '@angular/core';
 import {HttpClient} from '../http/http.service';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {RequestOptionsArgs, URLSearchParams} from '@angular/http';
 import {Cheque} from './domain/cheque.model';
 import {IssuingCount} from './domain/issuing-count.model';

@@ -22,7 +22,7 @@ import * as fromPortfolio from '../../store/index';
 import {PortfolioStore} from '../../store/index';
 import {ActivatedRoute, Router} from '@angular/router';
 import {UPDATE} from '../../store/lossProvision/loss-provision.actions';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {FimsProduct} from '../../store/model/fims-product.model';
 
 @Component({

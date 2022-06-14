@@ -30,9 +30,9 @@ import {
   Validators
 } from '@angular/forms';
 import {AbstractControlValueAccessor} from '../abstract-value-accessor';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {FimsValidators} from '../../../../common/validator/validators';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import {Operator} from '../../../../services/reporting/domain/query-parameter.model';
 import {createPlaceholder} from '../query-params.helper';
 

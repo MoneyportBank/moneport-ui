@@ -18,8 +18,8 @@
  */
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {TableData} from '../../../../../common/data-table/data-table.component';
-import {Subscription} from 'rxjs/Subscription';
-import {Observable} from 'rxjs/Observable';
+import {Subscription} from 'rxjs';
+import {Observable} from 'rxjs';
 import * as fromOffices from '../../../../store/index';
 import {OfficesStore} from '../../../../store/index';
 import {LoadDenominationAction} from '../../../../store/teller/denomination/denomination.actions';

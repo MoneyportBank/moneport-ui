@@ -19,7 +19,7 @@
 import {Component, OnInit} from '@angular/core';
 import * as fromCases from '../store/index';
 import {CasesStore} from '../store/index';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {CreditWorthinessFactor} from '../../../services/portfolio/domain/individuallending/credit-worthiness-factor.model';
 import {CreditWorthinessSnapshot} from '../../../services/portfolio/domain/individuallending/credit-worthiness-snapshot.model';
 import * as fromCustomers from '../../store/index';

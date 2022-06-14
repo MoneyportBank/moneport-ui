@@ -19,12 +19,12 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ChargeDefinition} from '../../../../services/portfolio/domain/charge-definition.model';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import {UPDATE} from '../../store/charges/charge.actions';
 import * as fromPortfolio from '../../store';
 import {PortfolioStore} from '../../store/index';
 import {FimsProduct} from '../../store/model/fims-product.model';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {RangeActions} from '../../store/ranges/range.actions';
 import {FimsRange} from '../../../../services/portfolio/domain/range-model';
 

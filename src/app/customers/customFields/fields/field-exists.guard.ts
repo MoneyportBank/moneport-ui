@@ -20,7 +20,7 @@ import {ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot} from '@angular
 import {Injectable} from '@angular/core';
 import {CustomersStore} from '../../store/index';
 import {ExistsGuardService} from '../../../common/guards/exists-guard';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import * as fromCustomers from '../../store';
 
 @Injectable()

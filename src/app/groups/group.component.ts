@@ -21,7 +21,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FetchRequest } from '../services/domain/paging/fetch-request.model';
 import { TableData, TableFetchRequest } from '../common/data-table/data-table.component';
 import { Group } from '../services/group/domain/group.model';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import * as fromRoot from '../store';
 import { SEARCH } from '../store/group/group.actions';
 import { GroupsStore } from './store/index';

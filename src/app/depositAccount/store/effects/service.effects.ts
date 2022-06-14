@@ -18,11 +18,11 @@
  */
 import * as definitionActions from '../product.actions';
 import {Action} from '@ngrx/store';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {Actions, Effect} from '@ngrx/effects';
 import {Injectable} from '@angular/core';
 import {DepositAccountService} from '../../../services/depositAccount/deposit-account.service';
-import {of} from 'rxjs/observable/of';
+import {of} from 'rxjs';
 import {emptySearchResult} from '../../../common/store/search.reducer';
 
 @Injectable()

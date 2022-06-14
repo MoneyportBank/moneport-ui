@@ -16,8 +16,8 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-import {of} from 'rxjs/observable/of';
-import {Observable} from 'rxjs/Observable';
+import {of} from 'rxjs';
+import {Observable} from 'rxjs';
 import {LoadAction} from './store/product.actions';
 import {ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot} from '@angular/router';
 import {Injectable} from '@angular/core';

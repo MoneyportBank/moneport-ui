@@ -19,7 +19,7 @@
 import {Component, OnInit} from '@angular/core';
 import * as fromAccouting from '../store/index';
 import {AccountingStore} from '../store/index';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {TableData} from '../../common/data-table/data-table.component';
 import {PayrollCollectionHistory} from '../../services/payroll/domain/payroll-collection-history.model';
 import {ActivatedRoute, Router} from '@angular/router';

@@ -21,7 +21,7 @@ import * as fromCustomers from '../store';
 import {Component} from '@angular/core';
 import {CustomersStore} from '../store/index';
 import {TaskDefinition, TaskDefinitionType} from '../../services/customer/domain/task-definition.model';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {LOAD_ALL} from '../store/tasks/task.actions';
 import {TableData} from '../../common/data-table/data-table.component';
 import {defaultTypeOptions} from './domain/type-options.model';

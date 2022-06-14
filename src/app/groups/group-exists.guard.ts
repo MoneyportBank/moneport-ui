@@ -19,9 +19,9 @@
 import {ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot} from '@angular/router';
 import {Injectable} from '@angular/core';
 import * as fromGroups from './store';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {LoadAction} from './store/group.actions';
-import {of} from 'rxjs/observable/of';
+import {of} from 'rxjs';
 import {GroupService} from '../services/group/group.service';
 import {GroupsStore} from './store/index';
 import {ExistsGuardService} from '../common/guards/exists-guard';

@@ -21,7 +21,7 @@ import {CaseListComponent} from './case.list.component';
 import {ActivatedRouteStub, RouterLinkStubDirective, RouterStub} from '../../common/testing/router-stubs';
 import {ActivatedRoute, Router} from '@angular/router';
 import {TranslateModule} from '@ngx-translate/core';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import * as fromCases from './store/index';
 import {CasesStore} from './store/index';
 import * as fromCustomers from '../store';

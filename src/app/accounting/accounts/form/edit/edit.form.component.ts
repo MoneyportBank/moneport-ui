@@ -20,7 +20,7 @@ import {Account} from '../../../../services/accounting/domain/account.model';
 import {AccountFormComponent} from '../form.component';
 import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import * as fromAccounting from '../../../store';
 import {AccountingStore} from '../../../store/index';
 import {SelectAction, UPDATE} from '../../../store/account/account.actions';

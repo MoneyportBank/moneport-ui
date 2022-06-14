@@ -20,7 +20,7 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RoleFormComponent} from './form.component';
 import {PermittableGroup} from '../../services/anubis/permittable-group.model';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {IdentityService} from '../../services/identity/identity.service';
 import {Role} from '../../services/identity/domain/role.model';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';

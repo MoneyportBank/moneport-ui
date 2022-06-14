@@ -19,9 +19,9 @@
 import {ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot} from '@angular/router';
 import {Injectable} from '@angular/core';
 import * as fromProducts from './store';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {LoadAction} from './store/product.actions';
-import {of} from 'rxjs/observable/of';
+import {of} from 'rxjs';
 import {PortfolioStore} from './store/index';
 import {PortfolioService} from '../../services/portfolio/portfolio.service';
 import {mapToFimsProduct} from './store/model/fims-product.mapper';

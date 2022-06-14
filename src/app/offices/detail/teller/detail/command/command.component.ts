@@ -23,7 +23,7 @@ import {Action, TellerManagementCommand} from '../../../../../services/teller/do
 import {Teller} from '../../../../../services/teller/domain/teller.model';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Office} from '../../../../../services/office/domain/office.model';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import {EXECUTE_COMMAND} from '../../../../store/teller/teller.actions';
 
 @Component({

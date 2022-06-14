@@ -19,12 +19,12 @@
 import {Component, OnInit} from '@angular/core';
 import {PortfolioStore} from '../../store/index';
 import * as fromPortfolio from '../../store';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {RangeActions} from '../../store/ranges/range.actions';
 import {ActivatedRoute} from '@angular/router';
 import {ITdDataTableColumn, TdDialogService} from '@covalent/core';
 import {FimsProduct} from '../../store/model/fims-product.model';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import {FimsRange} from '../../../../services/portfolio/domain/range-model';
 
 @Component({

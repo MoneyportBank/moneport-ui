@@ -18,7 +18,7 @@
  */
 import {ActivatedRouteSnapshot, Router, RouterStateSnapshot} from '@angular/router';
 import {TestBed} from '@angular/core/testing';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {Store} from '@ngrx/store';
 import {ChangePasswordGuard} from './change.password.service';
 import {Authentication} from '../identity/domain/authentication.model';

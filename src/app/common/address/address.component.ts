@@ -23,7 +23,7 @@ import {Address} from '../../services/domain/address/address.model';
 import {Country} from '../../services/country/model/country.model';
 import {CountryService} from '../../services/country/country.service';
 import {countryExists} from '../validator/country-exists.validator';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'fims-address-form',

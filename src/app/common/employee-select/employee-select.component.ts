@@ -18,7 +18,7 @@
  */
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FetchRequest} from '../../services/domain/paging/fetch-request.model';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {Employee} from '../../services/office/domain/employee.model';
 import {OfficeService} from '../../services/office/office.service';
 import {EmployeePage} from '../../services/office/domain/employee-page.model';

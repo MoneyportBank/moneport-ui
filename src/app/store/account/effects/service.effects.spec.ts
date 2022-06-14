@@ -22,7 +22,7 @@ import {AccountSearchApiEffects} from './service.effects';
 import {AccountingService} from '../../../services/accounting/accounting.service';
 import {AccountPage} from '../../../services/accounting/domain/account-page.model';
 import {SearchAction, SearchByLedgerAction, SearchCompleteAction} from '../account.actions';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {emptySearchResult} from '../../../common/store/search.reducer';
 
 describe('Account Search Api Effects', () => {

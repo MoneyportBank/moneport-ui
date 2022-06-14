@@ -16,11 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-import {of} from 'rxjs/observable/of';
+import {of} from 'rxjs';
 import {Injectable} from '@angular/core';
 import {CustomerService} from '../../../../../services/customer/customer.service';
 import {Actions, Effect} from '@ngrx/effects';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {Action} from '@ngrx/store';
 import * as identificationCardScans from '../scans.actions';
 

@@ -17,7 +17,7 @@
  * under the License.
  */
 import {NotificationService, NotificationType} from '../../../../services/notification/notification.service';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {Actions, Effect} from '@ngrx/effects';
 import {Injectable} from '@angular/core';
 import {Action} from '@ngrx/store';

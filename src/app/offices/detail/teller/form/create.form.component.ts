@@ -17,7 +17,7 @@
  * under the License.
  */
 import {Component, OnDestroy, ViewChild} from '@angular/core';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import {Teller} from '../../../../services/teller/domain/teller.model';
 import {OfficeTellerFormComponent} from './form.component';
 import {ActivatedRoute, Router} from '@angular/router';

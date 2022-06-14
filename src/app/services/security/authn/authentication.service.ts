@@ -17,7 +17,7 @@
  * under the License.
  */
 import {Inject, Injectable} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {Headers, Http, RequestOptionsArgs, Response} from '@angular/http';
 import {Error} from '../../domain/error.model';
 import {Authentication} from '../../identity/domain/authentication.model';

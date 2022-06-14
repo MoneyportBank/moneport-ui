@@ -21,10 +21,9 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Customer} from '../../services/customer/domain/customer.model';
 import {Catalog} from '../../services/catalog/domain/catalog.model';
 import * as fromCustomers from '../store';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription, Observable} from 'rxjs';
 import {CustomersStore} from '../store/index';
 import {CustomerService} from '../../services/customer/customer.service';
-import {Observable} from 'rxjs/Observable';
 
 
 interface CustomDetailField {

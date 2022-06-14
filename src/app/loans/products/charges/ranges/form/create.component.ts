@@ -22,7 +22,7 @@ import * as fromPortfolio from '../../../store/index';
 import {PortfolioStore} from '../../../store/index';
 import {RangeActions} from '../../../store/ranges/range.actions';
 import {FimsProduct} from '../../../store/model/fims-product.model';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import {FimsRange} from '../../../../../services/portfolio/domain/range-model';
 
 @Component({

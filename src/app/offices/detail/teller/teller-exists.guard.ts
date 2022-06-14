@@ -19,8 +19,8 @@
 import {ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot} from '@angular/router';
 import {Injectable} from '@angular/core';
 import * as fromOffices from '../../store';
-import {Observable} from 'rxjs/Observable';
-import {of} from 'rxjs/observable/of';
+import {Observable} from 'rxjs';
+import {of} from 'rxjs';
 import {OfficesStore} from '../../store/index';
 import {TellerService} from '../../../services/teller/teller-service';
 import {LoadAction} from '../../store/teller/teller.actions';

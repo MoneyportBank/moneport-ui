@@ -16,8 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-import {Observable} from 'rxjs/Observable';
-import {of} from 'rxjs/observable/of';
+import {Observable, of} from 'rxjs';
 import {Router} from '@angular/router';
 import {Inject, Injectable} from '@angular/core';
 

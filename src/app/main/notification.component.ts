@@ -22,7 +22,7 @@ import {NotificationEvent, NotificationService, NotificationType} from '../servi
 import {TranslateService} from '@ngx-translate/core';
 import {HttpClient} from '../services/http/http.service';
 import {TdDialogService} from '@covalent/core';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import {MatSnackBar, MatSnackBarConfig, MatSnackBarRef} from '@angular/material';
 
 @Component({

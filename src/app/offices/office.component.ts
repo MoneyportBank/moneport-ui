@@ -23,7 +23,7 @@ import {TableData} from '../common/data-table/data-table.component';
 import {Office} from '../services/office/domain/office.model';
 import * as fromRoot from '../store';
 
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {SEARCH} from '../store/office/office.actions';
 import {OfficesStore} from './store/index';
 

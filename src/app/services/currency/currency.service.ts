@@ -17,7 +17,7 @@
  * under the License.
  */
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {Currency} from './domain/currency.model';
 
 @Injectable()

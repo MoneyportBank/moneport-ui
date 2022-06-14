@@ -17,7 +17,7 @@
  * under the License.
  */
 import {Action} from '@ngrx/store';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {Router} from '@angular/router';
 import {Actions, Effect} from '@ngrx/effects';
 import {Injectable} from '@angular/core';

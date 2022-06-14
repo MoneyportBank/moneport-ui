@@ -19,10 +19,10 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import * as fromDepositAccounts from '../../store/index';
 import {DepositAccountStore} from '../../store/index';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {TableData} from '../../../common/data-table/data-table.component';
 import {LOAD_ALL} from '../../store/dividends/dividend.actions';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import {DisplayFimsDate} from '../../../common/date/fims-date.pipe';
 
 @Component({

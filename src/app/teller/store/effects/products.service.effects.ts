@@ -20,10 +20,10 @@ import {Injectable} from '@angular/core';
 import {Actions, Effect} from '@ngrx/effects';
 import {DepositAccountService} from '../../../services/depositAccount/deposit-account.service';
 import {PortfolioService} from '../../../services/portfolio/portfolio.service';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import * as tellerActions from '../teller.actions';
 import {Action} from '@ngrx/store';
-import {of} from 'rxjs/observable/of';
+import {of} from 'rxjs';
 
 @Injectable()
 export class TellerProductsApiEffects {

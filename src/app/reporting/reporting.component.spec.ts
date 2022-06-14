@@ -22,7 +22,7 @@ import {TranslateModule} from '@ngx-translate/core';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ReportingService} from '../services/reporting/reporting.service';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {By} from '@angular/platform-browser';
 import {FimsSharedModule} from '../common/common.module';
 import {RouterLinkStubDirective, RouterOutletStubComponent} from '../common/testing/router-stubs';

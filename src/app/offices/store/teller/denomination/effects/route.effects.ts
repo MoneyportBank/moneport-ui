@@ -19,7 +19,7 @@
 import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
 import {Actions, Effect} from '@ngrx/effects';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {Action} from '@ngrx/store';
 import * as denominationActions from '../denomination.actions';
 

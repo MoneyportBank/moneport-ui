@@ -21,7 +21,7 @@ import * as fromGroups from '../store';
 import { Component, OnInit } from '@angular/core';
 import { GroupsStore } from '../store/index';
 import { GroupDefinition } from '../../services/group/domain/group-definition.model';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { LOAD_ALL } from '../store/definition/definition.actions';
 import { TableData } from '../../common/data-table/data-table.component';
 // import {defaultTypeOptions} from '../domain/type-options.model';

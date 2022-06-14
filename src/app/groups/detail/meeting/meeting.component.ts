@@ -17,13 +17,13 @@
  * under the License.
  */
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import * as fromGroups from '../../store/index';
 import { GroupsStore } from '../../store/index';
 import { Meeting } from '../../../services/group/domain/meeting.model';
 import { LOAD_ALL } from '../../store/meeting/meeting.actions';
 import { TableData } from '../../../common/data-table/data-table.component';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 import { Group } from '../../../services/group/domain/group.model';
 import { ActivatedRoute, Router } from '@angular/router';
 

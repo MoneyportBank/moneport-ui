@@ -20,7 +20,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Group } from '../../services/group/domain/group.model';
 import * as fromGroups from '../store';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 import { GroupsStore } from '../store/index';
 import { GroupService } from '../../services/group/group.service';
 

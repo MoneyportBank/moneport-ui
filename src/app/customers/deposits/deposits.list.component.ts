@@ -17,9 +17,8 @@
  * under the License.
  */
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import {Observable, Subscription} from 'rxjs';
 import {Customer} from '../../services/customer/domain/customer.model';
-import {Subscription} from 'rxjs/Subscription';
 import {TableData} from '../../common/data-table/data-table.component';
 import {ActivatedRoute, Router} from '@angular/router';
 import * as fromDeposits from './store/index';

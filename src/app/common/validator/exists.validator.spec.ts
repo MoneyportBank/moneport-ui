@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {FormControl, ValidationErrors} from '@angular/forms';
 import {fakeAsync, tick} from '@angular/core/testing';
 import {accountExists} from './account-exists.validator';

@@ -26,8 +26,7 @@ import * as fromCases from './store/index';
 import {CasesStore} from './store/index';
 import * as fromCustomers from '../store';
 import * as fromRoot from '../../store';
-import {Observable} from 'rxjs/Observable';
-import {Subscription} from 'rxjs/Subscription';
+import {Observable, Subscription} from 'rxjs';
 import {SEARCH} from './store/case.actions';
 import {FimsPermission} from '../../services/security/authz/fims-permission.model';
 

@@ -19,7 +19,7 @@
 import {Injectable} from '@angular/core';
 import {TellerService} from '../../../../../../services/teller/teller-service';
 import {TellerBalance} from './teller-balance.model';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {TellerEntry} from '../../../../../../services/teller/domain/teller-entry.model';
 
 @Injectable()

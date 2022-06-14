@@ -18,7 +18,7 @@
  */
 import {LOCALE_ID, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {Http, HttpModule} from '@angular/http';
+import {HttpClient as Http, HttpClientModule} from '@angular/common/http';
 import {AppComponent} from './app.component';
 import {appRoutes, appRoutingProviders} from './app.routes';
 import {HttpClient} from './services/http/http.service';
@@ -70,7 +70,7 @@ export function HttpLoaderFactory(http: Http) {
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HttpModule,
+    HttpClientModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

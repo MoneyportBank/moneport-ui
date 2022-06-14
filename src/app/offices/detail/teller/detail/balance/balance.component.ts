@@ -17,7 +17,7 @@
  * under the License.
  */
 import {Component, OnInit} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import * as fromOffices from '../../../../store/index';
 import {OfficesStore} from '../../../../store/index';
 import {TellerBalance} from './services/teller-balance.model';

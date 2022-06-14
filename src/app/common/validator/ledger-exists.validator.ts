@@ -17,7 +17,7 @@
  * under the License.
  */
 import {AbstractControl, AsyncValidatorFn, ValidationErrors} from '@angular/forms';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {AccountingService} from '../../services/accounting/accounting.service';
 import {isString} from './validators';
 

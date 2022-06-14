@@ -23,9 +23,9 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import * as fromRoot from '../store';
 import {Store} from '@ngrx/store';
 import {LOGIN} from '../store/security/security.actions';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import {TRANSLATE_STORAGE_KEY} from '../common/i18n/translate';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {MatSelectChange} from '@angular/material';
 
 @Component({

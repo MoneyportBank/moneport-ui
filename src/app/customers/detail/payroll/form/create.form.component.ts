@@ -18,7 +18,7 @@
  */
 import {Component} from '@angular/core';
 import {PayrollConfiguration} from '../../../../services/payroll/domain/payroll-configuration.model';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import * as fromCustomers from '../../../store/index';
 import {CustomersStore} from '../../../store/index';
 import {ActivatedRoute, Router} from '@angular/router';

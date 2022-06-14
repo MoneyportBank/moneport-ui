@@ -18,7 +18,7 @@
  */
 import {Component, EventEmitter, forwardRef, Input, OnInit, Output} from '@angular/core';
 import {FetchRequest} from '../../services/domain/paging/fetch-request.model';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {PortfolioService} from '../../services/portfolio/portfolio.service';
 import {ProductPage} from '../../services/portfolio/domain/product-page.model';

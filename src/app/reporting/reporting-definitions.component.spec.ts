@@ -21,7 +21,7 @@ import {TranslateModule} from '@ngx-translate/core';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ReportingService} from '../services/reporting/reporting.service';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {By} from '@angular/platform-browser';
 import {ReportingDefinitionsComponent} from './reporting-definitions.component';
 import {ReportDefinition} from '../services/reporting/domain/report-definition.model';

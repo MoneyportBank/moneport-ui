@@ -22,8 +22,8 @@ import {ActivatedRoute, Router} from '@angular/router';
 import * as fromOffices from '../../../store/index';
 import {OfficesStore} from '../../../store/index';
 import {RESET_FORM, UPDATE_TELLER} from '../../../store/teller/teller.actions';
-import {Observable} from 'rxjs/Observable';
-import {Subscription} from 'rxjs/Subscription';
+import {Observable} from 'rxjs';
+import {Subscription} from 'rxjs';
 import {Office} from '../../../../services/office/domain/office.model';
 
 @Component({

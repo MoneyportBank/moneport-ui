@@ -18,7 +18,7 @@
  */
 import {OfficeService} from '../../services/office/office.service';
 import {AbstractControl, AsyncValidatorFn} from '@angular/forms';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {isString} from './validators';
 
 const invalid = Observable.of({

@@ -17,7 +17,7 @@
  * under the License.
  */
 import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import {IdentificationCard} from '../../../../services/customer/domain/identification-card.model';
 import {IdentityCardFormComponent} from './identity-card-form.component';
 import {ActivatedRoute, Router} from '@angular/router';

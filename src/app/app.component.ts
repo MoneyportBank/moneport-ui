@@ -22,7 +22,7 @@ import {TranslateService} from '@ngx-translate/core';
 import * as fromRoot from './store';
 import {Store} from '@ngrx/store';
 import {LoginSuccessAction} from './store/security/security.actions';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import {getSelectedLanguage} from './common/i18n/translate';
 
 @Component({

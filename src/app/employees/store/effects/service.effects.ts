@@ -19,9 +19,9 @@
 import {Injectable} from '@angular/core';
 import {OfficeService} from '../../../services/office/office.service';
 import {Actions, Effect} from '@ngrx/effects';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {Action} from '@ngrx/store';
-import {of} from 'rxjs/observable/of';
+import {of} from 'rxjs';
 import * as employeeActions from '../employee.actions';
 import {IdentityService} from '../../../services/identity/identity.service';
 import {RoleIdentifier} from '../../../services/identity/domain/role-identifier.model';

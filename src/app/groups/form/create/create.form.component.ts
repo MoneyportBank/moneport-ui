@@ -22,7 +22,7 @@ import { Group } from '../../../services/group/domain/group.model';
 import { GroupFormComponent } from '../form.component';
 import * as fromGroups from '../../store';
 import { Error } from '../../../services/domain/error.model';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 import { GroupsStore } from '../../store/index';
 import { CREATE, RESET_FORM } from '../../store/group.actions';
 

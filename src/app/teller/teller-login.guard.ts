@@ -18,7 +18,7 @@
  */
 import {Injectable} from '@angular/core';
 import {ActivatedRoute, ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot} from '@angular/router';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import * as fromTeller from './store/index';
 import {TellerStore} from './store/index';
 

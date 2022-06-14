@@ -18,7 +18,7 @@
  */
 import {Injectable} from '@angular/core';
 import {Actions, Effect} from '@ngrx/effects';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import * as lossProvisionActions from '../loss-provision.actions';
 import {Action} from '@ngrx/store';
 import {Router} from '@angular/router';

@@ -22,11 +22,10 @@ import {Customer} from '../../../services/customer/domain/customer.model';
 import {CustomerFormComponent} from '../form.component';
 import * as fromCustomers from '../../store';
 import {Error} from '../../../services/domain/error.model';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription, Observable} from 'rxjs';
 import {CustomersStore} from '../../store/index';
 import {CREATE, RESET_FORM} from '../../store/customer.actions';
 import {Catalog} from '../../../services/catalog/domain/catalog.model';
-import {Observable} from 'rxjs/Observable';
 
 @Component({
   templateUrl: './create.form.component.html'

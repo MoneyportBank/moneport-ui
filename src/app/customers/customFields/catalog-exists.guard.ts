@@ -22,9 +22,8 @@ import * as fromCustomers from '../store/index';
 import {CustomersStore} from '../store/index';
 import {CatalogService} from '../../services/catalog/catalog.service';
 import {ExistsGuardService} from '../../common/guards/exists-guard';
-import {Observable} from 'rxjs/Observable';
+import {Observable, of} from 'rxjs';
 import {LoadAction} from '../store/catalogs/catalog.actions';
-import {of} from 'rxjs/observable/of';
 
 @Injectable()
 export class CatalogExistsGuard implements CanActivate {

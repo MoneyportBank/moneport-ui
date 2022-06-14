@@ -18,7 +18,7 @@
  */
 
 import {AbstractControl, AsyncValidatorFn} from '@angular/forms';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {CustomerService} from '../../../../services/customer/customer.service';
 import {isString} from '../../../../common/validator/validators';
 import {PayrollService} from '../../../../services/payroll/payroll.service';

@@ -20,12 +20,12 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {PortfolioStore} from './store/index';
 import {DELETE, ENABLE} from './store/product.actions';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import * as fromPortfolio from './store';
 import * as fromRoot from '../../store';
 import {FimsProduct} from './store/model/fims-product.model';
 import {FimsPermission} from '../../services/security/authz/fims-permission.model';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {TdDialogService} from '@covalent/core';
 
 @Component({

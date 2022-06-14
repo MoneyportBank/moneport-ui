@@ -24,7 +24,7 @@ import {CasesStore} from '../store/index';
 import {UPDATE} from '../store/case.actions';
 import * as fromCustomers from '../../store/index';
 import {Product} from '../../../services/portfolio/domain/product.model';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {PortfolioService} from '../../../services/portfolio/portfolio.service';
 import {ProductInstance} from '../../../services/depositAccount/domain/instance/product-instance.model';
 import {DepositAccountService} from '../../../services/depositAccount/deposit-account.service';

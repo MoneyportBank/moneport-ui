@@ -18,10 +18,10 @@
  */
 import {Injectable} from '@angular/core';
 import {Actions, Effect} from '@ngrx/effects';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {Action} from '@ngrx/store';
 import * as denominationActions from '../denomination.actions';
-import {of} from 'rxjs/observable/of';
+import {of} from 'rxjs';
 import {TellerService} from '../../../../../services/teller/teller-service';
 
 @Injectable()

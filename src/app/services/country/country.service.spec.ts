@@ -22,8 +22,8 @@ import {CountryService} from './country.service';
 import {MockBackend} from '@angular/http/testing';
 import {BaseRequestOptions, ConnectionBackend, Http, RequestOptions, ResponseOptions} from '@angular/http';
 import {TranslateService} from '@ngx-translate/core';
-import {Observable} from 'rxjs/Observable';
-import {ReflectiveInjector} from '@angular/core';
+import {Observable} from 'rxjs';
+import {Injector} from '@angular/core';
 
 describe('Test country service', () => {
 
@@ -32,7 +32,7 @@ describe('Test country service', () => {
       onLangChange: Observable.empty()
     };
 
-    this.injector = ReflectiveInjector.resolveAndCreate([
+    this.injector = Injector.create([
       {provide: ConnectionBackend, useClass: MockBackend},
       {provide: RequestOptions, useClass: BaseRequestOptions},
       {provide: TranslateService, useValue: translateService},

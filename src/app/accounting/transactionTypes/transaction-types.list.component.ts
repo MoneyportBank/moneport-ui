@@ -17,7 +17,7 @@
  * under the License.
  */
 import {Component, OnInit} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import * as fromAccounting from '../store/index';
 import {AccountingStore} from '../store/index';
 import {TableData, TableFetchRequest} from '../../common/data-table/data-table.component';

@@ -18,12 +18,11 @@
  */
 import {Injectable} from '@angular/core';
 import {Actions, Effect} from '@ngrx/effects';
-import {Observable} from 'rxjs/Observable';
+import {Observable, of} from 'rxjs';
 import * as payrollActions from '../payroll-collection.actions';
 import {CreateSheetPayload} from '../payroll-collection.actions';
 import * as paymentActions from '../payment.actions';
 import {Action} from '@ngrx/store';
-import {of} from 'rxjs/observable/of';
 import {CreateResourceSuccessPayload} from '../../../../common/store/resource.reducer';
 import {emptySearchResult} from '../../../../common/store/search.reducer';
 import {PayrollService} from '../../../../services/payroll/payroll.service';

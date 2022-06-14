@@ -20,7 +20,7 @@
 import { fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { EffectsRunner, EffectsTestingModule } from '@ngrx/effects/testing';
 import { GroupSearchApiEffects } from './service.effects';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { GroupService } from '../../../services/group/group.service';
 import { SearchAction, SearchCompleteAction } from '../group.actions';
 import { GroupPage } from '../../../services/group/domain/group-page.model';

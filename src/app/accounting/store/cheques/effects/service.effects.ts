@@ -16,9 +16,8 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-import {of} from 'rxjs/observable/of';
+import {of, Observable} from 'rxjs';
 import {Action} from '@ngrx/store';
-import {Observable} from 'rxjs/Observable';
 import {Actions, Effect} from '@ngrx/effects';
 import {ChequeService} from '../../../../services/cheque/cheque.service';
 import {Injectable} from '@angular/core';
